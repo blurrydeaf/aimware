@@ -37,13 +37,8 @@ local rb_antiaim		= gui.Groupbox(rb_tab, "AntiAim", 10, 160, 300, 1)
 
 
 --##### variables void #####
-local index			= client.GetLocalPlayerIndex()
-local players 		= entities.FindByClass("CCSPlayer");
-local local_player	= entities.GetLocalPlayer()
-local weapon_id 	= local_player:GetWeaponID()
-local switch 		= false
-local weapons 		= {"shared","zeus","pistol","hpistol","smg","rifle","shotgun","scout","asniper","sniper","lmg"}
-local backup 		= {0,0,0,0,0,0,0,0,0,0,0}
+
+
 
 
 
@@ -105,7 +100,11 @@ end
 --##########  function for antiaim ##########
 local function pitch_func(cmd)
 
+	local local_player = entities.GetLocalPlayer()
+
 	if local_player == nil or not local_player:IsAlive() then return end
+	
+	local weapon_id = local_player:GetWeaponID()
 	
 	if weapon_id > 42 and weapon_id < 49 then return end
 	
