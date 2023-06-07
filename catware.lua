@@ -1,10 +1,10 @@
 --[[
 #########################################################
 				 Script lua aimware
-			 	  catware.lua v0.2
+			 	  catware.lua v1.1
 				      by blurry
-		You can +rep me if enjoy using this script!
-		 UID: https://aimware.net/forum/user/61632
+		Leave +rep on my profile if enjoy using this script!
+		       UID: https://aimware.net/forum/user/61632
 #########################################################
 ]]
 
