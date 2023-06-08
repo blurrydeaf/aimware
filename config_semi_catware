@@ -1,0 +1,1129 @@
+lua.unloadall
+lua.load "Catware.lua"
+adv.binds "Off"
+adv.confirm "On"
+adv.conkey 114
+adv.dpi "100% (default)"
+adv.menukey 45
+bind 0 0
+con 100 100
+esp.chams.backtrack.occluded "Flat"
+esp.chams.backtrack.occluded.clr 193 154 164 127
+esp.chams.backtrack.overlay.glow "Off"
+esp.chams.backtrack.overlay.glow.clr 255 255 255 255
+esp.chams.backtrack.overlay.wireframe "Off"
+esp.chams.backtrack.overlay.wireframe.clr 31 31 31 255
+esp.chams.backtrack.visible "Off"
+esp.chams.backtrack.visible.clr 141 87 208 150
+esp.chams.enabled "On"
+esp.chams.enemy.occluded "Flat"
+esp.chams.enemy.occluded.clr 193 154 164 255
+esp.chams.enemy.overlay.glow "Off"
+esp.chams.enemy.overlay.glow.clr 193 154 164 255
+esp.chams.enemy.overlay.glowhealth "Off"
+esp.chams.enemy.overlay.glowhealth.healthclr1 255 0 0 255
+esp.chams.enemy.overlay.glowhealth.healthclr2 0 255 0 255
+esp.chams.enemy.overlay.wireframe "Off"
+esp.chams.enemy.overlay.wireframe.clr 239 199 53 150
+esp.chams.enemy.visible "Flat"
+esp.chams.enemy.visible.clr 31 31 31 255
+esp.chams.enemyattachments.occluded "Off"
+esp.chams.enemyattachments.occluded.clr 240 55 80 255
+esp.chams.enemyattachments.overlay.glow "Off"
+esp.chams.enemyattachments.overlay.glow.clr 255 255 255 255
+esp.chams.enemyattachments.overlay.wireframe "Off"
+esp.chams.enemyattachments.overlay.wireframe.clr 239 199 53 150
+esp.chams.enemyattachments.visible "Off"
+esp.chams.enemyattachments.visible.clr 193 149 0 255
+esp.chams.enemyragdoll.occluded "Off"
+esp.chams.enemyragdoll.occluded.clr 240 55 80 255
+esp.chams.enemyragdoll.overlay.glow "Off"
+esp.chams.enemyragdoll.overlay.glow.clr 255 255 255 255
+esp.chams.enemyragdoll.overlay.wireframe "Off"
+esp.chams.enemyragdoll.overlay.wireframe.clr 239 199 53 150
+esp.chams.enemyragdoll.visible "Off"
+esp.chams.enemyragdoll.visible.clr 239 199 53 255
+esp.chams.friendly.occluded "Off"
+esp.chams.friendly.occluded.clr 48 210 55 255
+esp.chams.friendly.overlay.glow "Off"
+esp.chams.friendly.overlay.glow.clr 31 31 31 255
+esp.chams.friendly.overlay.glowhealth "Off"
+esp.chams.friendly.overlay.glowhealth.healthclr1 255 0 0 255
+esp.chams.friendly.overlay.glowhealth.healthclr2 0 255 0 255
+esp.chams.friendly.overlay.wireframe "Off"
+esp.chams.friendly.overlay.wireframe.clr 48 194 55 150
+esp.chams.friendly.visible "Off"
+esp.chams.friendly.visible.clr 31 31 31 255
+esp.chams.friendlyattachments.occluded "Off"
+esp.chams.friendlyattachments.occluded.clr 41 121 231 255
+esp.chams.friendlyattachments.overlay.glow "Off"
+esp.chams.friendlyattachments.overlay.glow.clr 255 255 255 255
+esp.chams.friendlyattachments.overlay.wireframe "Off"
+esp.chams.friendlyattachments.overlay.wireframe.clr 48 194 55 150
+esp.chams.friendlyattachments.visible "Off"
+esp.chams.friendlyattachments.visible.clr 0 255 0 255
+esp.chams.friendlyragdoll.occluded "Off"
+esp.chams.friendlyragdoll.occluded.clr 41 121 231 255
+esp.chams.friendlyragdoll.overlay.glow "Off"
+esp.chams.friendlyragdoll.overlay.glow.clr 255 255 255 255
+esp.chams.friendlyragdoll.overlay.wireframe "Off"
+esp.chams.friendlyragdoll.overlay.wireframe.clr 48 194 55 150
+esp.chams.friendlyragdoll.visible "Off"
+esp.chams.friendlyragdoll.visible.clr 48 210 55 255
+esp.chams.ghost.occluded "Off"
+esp.chams.ghost.occluded.clr 147 149 166 150
+esp.chams.ghost.overlay.glow "Off"
+esp.chams.ghost.overlay.glow.clr 255 255 255 255
+esp.chams.ghost.overlay.wireframe "Off"
+esp.chams.ghost.overlay.wireframe.clr 255 255 255 25
+esp.chams.ghost.visible "Flat"
+esp.chams.ghost.visible.clr 193 154 164 138
+esp.chams.local.occluded "Off"
+esp.chams.local.occluded.clr 147 149 166 150
+esp.chams.local.overlay.glow "Off"
+esp.chams.local.overlay.glow.clr 70 103 191 145
+esp.chams.local.overlay.glowhealth "Off"
+esp.chams.local.overlay.glowhealth.healthclr1 255 0 0 255
+esp.chams.local.overlay.glowhealth.healthclr2 0 255 0 255
+esp.chams.local.overlay.wireframe "Off"
+esp.chams.local.overlay.wireframe.clr 255 255 255 25
+esp.chams.local.visible "Off"
+esp.chams.local.visible.clr 31 31 31 255
+esp.chams.localarms.occluded "Off"
+esp.chams.localarms.occluded.clr 255 255 255 255
+esp.chams.localarms.overlay.glow "Off"
+esp.chams.localarms.overlay.glow.clr 255 255 255 255
+esp.chams.localarms.overlay.wireframe "Off"
+esp.chams.localarms.overlay.wireframe.clr 255 255 255 255
+esp.chams.localarms.visible "Off"
+esp.chams.localarms.visible.clr 255 255 255 255
+esp.chams.localattachments.occluded "Off"
+esp.chams.localattachments.occluded.clr 15 196 255 255
+esp.chams.localattachments.overlay.glow "Off"
+esp.chams.localattachments.overlay.glow.clr 255 255 255 255
+esp.chams.localattachments.overlay.wireframe "Off"
+esp.chams.localattachments.overlay.wireframe.clr 15 153 255 150
+esp.chams.localattachments.visible "Off"
+esp.chams.localattachments.visible.clr 197 5 0 255
+esp.chams.localweapon.occluded "Off"
+esp.chams.localweapon.occluded.clr 255 255 255 255
+esp.chams.localweapon.overlay.glow "Off"
+esp.chams.localweapon.overlay.glow.clr 255 255 255 255
+esp.chams.localweapon.overlay.wireframe "Off"
+esp.chams.localweapon.overlay.wireframe.clr 255 255 255 255
+esp.chams.localweapon.visible "Off"
+esp.chams.localweapon.visible.clr 255 255 255 255
+esp.chams.nades.occluded "Off"
+esp.chams.nades.occluded.clr 255 152 46 255
+esp.chams.nades.overlay.glow "Off"
+esp.chams.nades.overlay.glow.clr 255 0 0 179
+esp.chams.nades.overlay.wireframe "Off"
+esp.chams.nades.overlay.wireframe.clr 255 255 255 39
+esp.chams.nades.visible "Off"
+esp.chams.nades.visible.clr 255 152 46 255
+esp.chams.onshot.occluded "Pearlescent"
+esp.chams.onshot.occluded.clr 31 31 31 255
+esp.chams.onshot.overlay.glow "Off"
+esp.chams.onshot.overlay.glow.clr 255 255 255 255
+esp.chams.onshot.overlay.wireframe "Off"
+esp.chams.onshot.overlay.wireframe.clr 31 31 31 255
+esp.chams.onshot.visible "Off"
+esp.chams.onshot.visible.clr 141 87 208 150
+esp.chams.weapon.occluded "Off"
+esp.chams.weapon.occluded.clr 102 152 46 255
+esp.chams.weapon.overlay.glow "Off"
+esp.chams.weapon.overlay.glow.clr 255 180 0 179
+esp.chams.weapon.overlay.wireframe "Off"
+esp.chams.weapon.overlay.wireframe.clr 255 255 255 39
+esp.chams.weapon.visible "Off"
+esp.chams.weapon.visible.clr 102 152 46 255
+esp.master "On"
+esp.other.antiobs "Off"
+esp.other.antiscreenshot "Off"
+esp.other.crosshair "Off"
+esp.other.crosshair.clr 255 0 0 255
+esp.other.disablefarmodels "On"
+esp.other.killfeed "On"
+esp.other.noflash "On"
+esp.other.nofog "On"
+esp.other.nopostprocess "On"
+esp.other.norecoil "On"
+esp.other.norenderdead "On"
+esp.other.norenderenemy "Off"
+esp.other.norenderteam "Off"
+esp.other.norenderweapon "On"
+esp.other.noscope "On"
+esp.other.noscopedirt "On"
+esp.other.noscopeoverlay "On"
+esp.other.nosky "Off"
+esp.other.nosmoke "On"
+esp.other.radar "Off"
+esp.other.radaralpha 255
+esp.other.radardist 1000
+esp.other.recoilcrosshair "Off"
+esp.other.recoilcrosshair.clr 255 0 0 255
+esp.other.sharedesp "Shared with Team"
+esp.overlay.enemy.ammo "Off"
+esp.overlay.enemy.ammo.anchor 1
+esp.overlay.enemy.ammo.clr1 0 136 236 255
+esp.overlay.enemy.ammo.clr2 0 83 166 255
+esp.overlay.enemy.armor "Off"
+esp.overlay.enemy.armor.anchor 2
+esp.overlay.enemy.armor.clr1 255 255 255 255
+esp.overlay.enemy.barrel "Off"
+esp.overlay.enemy.barrel.clr1 168 50 83 255
+esp.overlay.enemy.box "Off"
+esp.overlay.enemy.box.clr1 193 154 164 255
+esp.overlay.enemy.dormant "On"
+esp.overlay.enemy.flags.anchor 3
+esp.overlay.enemy.flags.defusing "On"
+esp.overlay.enemy.flags.defusing.clr 255 255 255 255
+esp.overlay.enemy.flags.fakeduck "On"
+esp.overlay.enemy.flags.fakeduck.clr 193 154 164 255
+esp.overlay.enemy.flags.flashed "Off"
+esp.overlay.enemy.flags.flashed.clr 255 255 255 255
+esp.overlay.enemy.flags.hasc4 "On"
+esp.overlay.enemy.flags.hasc4.clr 193 154 164 255
+esp.overlay.enemy.flags.hasdefuser "Off"
+esp.overlay.enemy.flags.hasdefuser.clr 255 255 255 255
+esp.overlay.enemy.flags.lagcomp "On"
+esp.overlay.enemy.flags.lagcomp.clr 193 154 164 255
+esp.overlay.enemy.flags.planting "On"
+esp.overlay.enemy.flags.planting.clr 255 255 255 255
+esp.overlay.enemy.flags.reloading "On"
+esp.overlay.enemy.flags.reloading.clr 255 255 255 255
+esp.overlay.enemy.flags.scoped "On"
+esp.overlay.enemy.flags.scoped.clr 255 255 255 255
+esp.overlay.enemy.flags.tickbase "On"
+esp.overlay.enemy.flags.tickbase.clr 193 154 164 255
+esp.overlay.enemy.health.anchor 2
+esp.overlay.enemy.health.healthbar "On"
+esp.overlay.enemy.health.healthbar.healthclr1 193 154 164 255
+esp.overlay.enemy.health.healthbar.healthclr2 193 154 164 255
+esp.overlay.enemy.health.healthnum "On"
+esp.overlay.enemy.money "Off"
+esp.overlay.enemy.money.anchor 3
+esp.overlay.enemy.money.clr1 116 235 52 255
+esp.overlay.enemy.name "On"
+esp.overlay.enemy.name.anchor 0
+esp.overlay.enemy.name.clr1 255 255 255 255
+esp.overlay.enemy.ping "Off"
+esp.overlay.enemy.ping.anchor 3
+esp.overlay.enemy.ping.clr1 255 255 255 255
+esp.overlay.enemy.precision "On"
+esp.overlay.enemy.skeleton "Off"
+esp.overlay.enemy.skeleton.clr1 105 50 168 255
+esp.overlay.enemy.weapon "Icon"
+esp.overlay.enemy.weapon.anchor 1
+esp.overlay.enemy.weapon.clr1 255 255 255 255
+esp.overlay.enemy.weapon.clr2 231 50 46 255
+esp.overlay.enemy.weaponfilter.active "On"
+esp.overlay.enemy.weaponfilter.inventory "Off"
+esp.overlay.enemy.weaponfilter.nades "On"
+esp.overlay.friendly.ammo "Off"
+esp.overlay.friendly.ammo.anchor 1
+esp.overlay.friendly.ammo.clr1 0 136 236 255
+esp.overlay.friendly.ammo.clr2 0 83 166 255
+esp.overlay.friendly.armor "Off"
+esp.overlay.friendly.armor.anchor 2
+esp.overlay.friendly.armor.clr1 255 255 255 255
+esp.overlay.friendly.barrel "Off"
+esp.overlay.friendly.barrel.clr1 168 50 83 255
+esp.overlay.friendly.box "Off"
+esp.overlay.friendly.box.clr1 30 154 247 255
+esp.overlay.friendly.dormant "Off"
+esp.overlay.friendly.flags.anchor 3
+esp.overlay.friendly.flags.defusing "Off"
+esp.overlay.friendly.flags.defusing.clr 244 70 66 255
+esp.overlay.friendly.flags.fakeduck "Off"
+esp.overlay.friendly.flags.fakeduck.clr 60 227 60 255
+esp.overlay.friendly.flags.flashed "Off"
+esp.overlay.friendly.flags.flashed.clr 237 217 78 255
+esp.overlay.friendly.flags.hasc4 "Off"
+esp.overlay.friendly.flags.hasc4.clr 244 70 66 255
+esp.overlay.friendly.flags.hasdefuser "Off"
+esp.overlay.friendly.flags.hasdefuser.clr 255 255 255 255
+esp.overlay.friendly.flags.lagcomp "Off"
+esp.overlay.friendly.flags.lagcomp.clr 60 227 60 255
+esp.overlay.friendly.flags.planting "Off"
+esp.overlay.friendly.flags.planting.clr 244 70 66 255
+esp.overlay.friendly.flags.reloading "Off"
+esp.overlay.friendly.flags.reloading.clr 237 217 78 255
+esp.overlay.friendly.flags.scoped "Off"
+esp.overlay.friendly.flags.scoped.clr 81 191 234 255
+esp.overlay.friendly.flags.tickbase "Off"
+esp.overlay.friendly.flags.tickbase.clr 60 227 60 255
+esp.overlay.friendly.health.anchor 2
+esp.overlay.friendly.health.healthbar "Off"
+esp.overlay.friendly.health.healthbar.healthclr1 0 255 0 255
+esp.overlay.friendly.health.healthbar.healthclr2 255 0 0 255
+esp.overlay.friendly.health.healthnum "Off"
+esp.overlay.friendly.money "Off"
+esp.overlay.friendly.money.anchor 3
+esp.overlay.friendly.money.clr1 116 235 52 255
+esp.overlay.friendly.name "Off"
+esp.overlay.friendly.name.anchor 0
+esp.overlay.friendly.name.clr1 255 255 255 255
+esp.overlay.friendly.ping "Off"
+esp.overlay.friendly.ping.anchor 3
+esp.overlay.friendly.ping.clr1 255 255 255 255
+esp.overlay.friendly.precision "Off"
+esp.overlay.friendly.skeleton "Off"
+esp.overlay.friendly.skeleton.clr1 105 50 168 255
+esp.overlay.friendly.weapon "Off"
+esp.overlay.friendly.weapon.anchor 1
+esp.overlay.friendly.weapon.clr1 255 255 255 255
+esp.overlay.friendly.weapon.clr2 231 50 46 255
+esp.overlay.friendly.weaponfilter.active "Off"
+esp.overlay.friendly.weaponfilter.inventory "Off"
+esp.overlay.friendly.weaponfilter.nades "Off"
+esp.overlay.weapon.ammo "Off"
+esp.overlay.weapon.ammo.anchor 1
+esp.overlay.weapon.ammo.clr1 0 136 236 255
+esp.overlay.weapon.ammo.clr2 0 83 166 255
+esp.overlay.weapon.box "Off"
+esp.overlay.weapon.box.clr1 200 200 100 255
+esp.overlay.weapon.c4timer "On"
+esp.overlay.weapon.defuser "On"
+esp.overlay.weapon.dzitems "Off"
+esp.overlay.weapon.dzturret "Off"
+esp.overlay.weapon.nades.icon "On"
+esp.overlay.weapon.nades.name "Off"
+esp.overlay.weapon.nades.timer "On"
+esp.overlay.weapon.name "Icon"
+esp.overlay.weapon.name.anchor 0
+esp.overlay.weapon.name.clr1 255 255 255 255
+esp.skins.enabled "On"
+esp.world.bullettracer "All"
+esp.world.bullettracerfilter.enemy "On"
+esp.world.bullettracerfilter.enemy.clr 31 31 31 255
+esp.world.bullettracerfilter.friendly "On"
+esp.world.bullettracerfilter.friendly.clr 31 31 31 255
+esp.world.bullettracerfilter.local "On"
+esp.world.bullettracerfilter.local.clr 31 31 31 255
+esp.world.dmgindicator "Off"
+esp.world.fov 100
+esp.world.hiteffects.marker "Off"
+esp.world.hiteffects.sound "Off"
+esp.world.inferno.enemy "On"
+esp.world.inferno.friendly "On"
+esp.world.inferno.local "On"
+esp.world.materials.skybox "sky_csgo_cloudy01"
+esp.world.materials.skybox.clr 255 255 255 255
+esp.world.materials.staticprops "On"
+esp.world.materials.staticprops.clr 31 31 31 242
+esp.world.materials.walls "On"
+esp.world.materials.walls.clr 31 31 31 255
+esp.world.nadetracer.enemy "On"
+esp.world.nadetracer.enemy.clr 31 31 31 255
+esp.world.nadetracer.fade "On"
+esp.world.nadetracer.friendly "On"
+esp.world.nadetracer.friendly.clr 31 31 31 255
+esp.world.nadetracer.local "On"
+esp.world.nadetracer.local.clr 31 31 31 255
+esp.world.nadewarning.enemy "On"
+esp.world.nadewarning.friendly "On"
+esp.world.nadewarning.local "On"
+esp.world.outofview "Arrow + Info"
+esp.world.outofviewscale 70
+esp.world.smoothghost "On"
+esp.world.sounds "On"
+esp.world.thirdperson "Off"
+esp.world.thirdpersondist 200
+esp.world.viewmodelfov 60
+esp.world.wallbanginfo.circle "Off"
+esp.world.wallbanginfo.crosshair "Off"
+esp.world.wallbanginfo.dmg "Off"
+lbot.aim.autofire "Off"
+lbot.aim.autopistol 150
+lbot.aim.enable "On"
+lbot.aim.fireonpress "On"
+lbot.aim.hitbox "Pistol"
+lbot.aim.hitbox.asniper.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.asniper.hitboxstep 1.5
+lbot.aim.hitbox.asniper.nearest "On"
+lbot.aim.hitbox.hpistol.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.hpistol.hitboxstep 1.5
+lbot.aim.hitbox.hpistol.nearest "On"
+lbot.aim.hitbox.lmg.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.lmg.hitboxstep 1.5
+lbot.aim.hitbox.lmg.nearest "On"
+lbot.aim.hitbox.pistol.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.pistol.hitboxstep 1.5
+lbot.aim.hitbox.pistol.nearest "On"
+lbot.aim.hitbox.rifle.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.rifle.hitboxstep 1.5
+lbot.aim.hitbox.rifle.nearest "On"
+lbot.aim.hitbox.scout.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.scout.hitboxstep 1.5
+lbot.aim.hitbox.scout.nearest "On"
+lbot.aim.hitbox.shared.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.shared.hitboxstep 1.5
+lbot.aim.hitbox.shared.nearest "On"
+lbot.aim.hitbox.shotgun.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.shotgun.hitboxstep 1.5
+lbot.aim.hitbox.shotgun.nearest "On"
+lbot.aim.hitbox.smg.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.smg.hitboxstep 1.5
+lbot.aim.hitbox.smg.nearest "On"
+lbot.aim.hitbox.sniper.hitbox 0 1 0 2 1 0 0 0 
+lbot.aim.hitbox.sniper.hitboxstep 1.5
+lbot.aim.hitbox.sniper.nearest "On"
+lbot.aim.hitbox.zeus.hitbox 3 2 0 1 0 0 0 0 
+lbot.aim.hitbox.zeus.hitboxstep 1.5
+lbot.aim.hitbox.zeus.nearest "On"
+lbot.aim.key 1
+lbot.aim.togglekey 0
+lbot.antiaim.autokey 0
+lbot.antiaim.enemy "Off"
+lbot.antiaim.leftkey 0
+lbot.antiaim.offkey 0
+lbot.antiaim.ongrenade "On"
+lbot.antiaim.onknife "On"
+lbot.antiaim.rightkey 0
+lbot.antiaim.type "Off"
+lbot.extra.backtrack 35
+lbot.extra.knifetrigger "Off"
+lbot.master "Off"
+lbot.movement.quickstop "Off"
+lbot.movement.walkcustom "Off"
+lbot.movement.walkspeed 135
+lbot.posadj.backtrack "Off"
+lbot.posadj.resolver "Off"
+lbot.semirage.autostop "Off"
+lbot.semirage.silentaimbot "Off"
+lbot.trg.autofire "Off"
+lbot.trg.enable "On"
+lbot.trg.hitbox "Pistol"
+lbot.trg.hitbox.asniper.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.hpistol.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.lmg.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.pistol.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.rifle.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.scout.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.shared.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.shotgun.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.smg.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.sniper.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.hitbox.zeus.hitbox 1 1 0 1 0 0 0 0 
+lbot.trg.key 0
+lbot.trg.weapon "Pistol"
+lbot.trg.weapon.asniper.antirecoil "On"
+lbot.trg.weapon.asniper.burst 200
+lbot.trg.weapon.asniper.delay 0
+lbot.trg.weapon.asniper.hitchance 50
+lbot.trg.weapon.hpistol.antirecoil "On"
+lbot.trg.weapon.hpistol.burst 200
+lbot.trg.weapon.hpistol.delay 0
+lbot.trg.weapon.hpistol.hitchance 50
+lbot.trg.weapon.lmg.antirecoil "On"
+lbot.trg.weapon.lmg.burst 200
+lbot.trg.weapon.lmg.delay 0
+lbot.trg.weapon.lmg.hitchance 50
+lbot.trg.weapon.pistol.antirecoil "On"
+lbot.trg.weapon.pistol.burst 200
+lbot.trg.weapon.pistol.delay 0
+lbot.trg.weapon.pistol.hitchance 50
+lbot.trg.weapon.rifle.antirecoil "On"
+lbot.trg.weapon.rifle.burst 200
+lbot.trg.weapon.rifle.delay 0
+lbot.trg.weapon.rifle.hitchance 50
+lbot.trg.weapon.scout.antirecoil "On"
+lbot.trg.weapon.scout.burst 200
+lbot.trg.weapon.scout.delay 0
+lbot.trg.weapon.scout.hitchance 50
+lbot.trg.weapon.shared.antirecoil "On"
+lbot.trg.weapon.shared.burst 200
+lbot.trg.weapon.shared.delay 0
+lbot.trg.weapon.shared.hitchance 50
+lbot.trg.weapon.shotgun.antirecoil "On"
+lbot.trg.weapon.shotgun.burst 200
+lbot.trg.weapon.shotgun.delay 0
+lbot.trg.weapon.shotgun.hitchance 50
+lbot.trg.weapon.smg.antirecoil "On"
+lbot.trg.weapon.smg.burst 200
+lbot.trg.weapon.smg.delay 0
+lbot.trg.weapon.smg.hitchance 50
+lbot.trg.weapon.sniper.antirecoil "On"
+lbot.trg.weapon.sniper.burst 200
+lbot.trg.weapon.sniper.delay 0
+lbot.trg.weapon.sniper.hitchance 50
+lbot.trg.weapon.zeus.antirecoil "On"
+lbot.trg.weapon.zeus.burst 200
+lbot.trg.weapon.zeus.delay 0
+lbot.trg.weapon.zeus.hitchance 50
+lbot.weapon.accuracy "Pistol"
+lbot.weapon.accuracy.asniper.hrecoil 50
+lbot.weapon.accuracy.asniper.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.asniper.vrecoil 100
+lbot.weapon.accuracy.hpistol.hrecoil 50
+lbot.weapon.accuracy.hpistol.rcs "Off"
+lbot.weapon.accuracy.hpistol.vrecoil 100
+lbot.weapon.accuracy.lmg.hrecoil 50
+lbot.weapon.accuracy.lmg.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.lmg.vrecoil 100
+lbot.weapon.accuracy.pistol.hrecoil 50
+lbot.weapon.accuracy.pistol.rcs "Off"
+lbot.weapon.accuracy.pistol.vrecoil 100
+lbot.weapon.accuracy.rifle.hrecoil 50
+lbot.weapon.accuracy.rifle.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.rifle.vrecoil 100
+lbot.weapon.accuracy.scout.hrecoil 50
+lbot.weapon.accuracy.scout.rcs "Off"
+lbot.weapon.accuracy.scout.vrecoil 100
+lbot.weapon.accuracy.shared.hrecoil 50
+lbot.weapon.accuracy.shared.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.shared.vrecoil 100
+lbot.weapon.accuracy.shotgun.hrecoil 50
+lbot.weapon.accuracy.shotgun.rcs "Off"
+lbot.weapon.accuracy.shotgun.vrecoil 100
+lbot.weapon.accuracy.smg.hrecoil 50
+lbot.weapon.accuracy.smg.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.smg.vrecoil 100
+lbot.weapon.accuracy.sniper.hrecoil 50
+lbot.weapon.accuracy.sniper.rcs "Off"
+lbot.weapon.accuracy.sniper.vrecoil 100
+lbot.weapon.accuracy.zeus.hrecoil 50
+lbot.weapon.accuracy.zeus.rcs "Aiming and Standalone"
+lbot.weapon.accuracy.zeus.vrecoil 100
+lbot.weapon.aim "Pistol"
+lbot.weapon.aim.asniper.curve 0.5
+lbot.weapon.aim.asniper.randomize 4
+lbot.weapon.aim.asniper.smooth 4
+lbot.weapon.aim.asniper.smoothtype "Static"
+lbot.weapon.aim.hpistol.curve 0.5
+lbot.weapon.aim.hpistol.randomize 4
+lbot.weapon.aim.hpistol.smooth 2
+lbot.weapon.aim.hpistol.smoothtype "Dynamic"
+lbot.weapon.aim.lmg.curve 0.5
+lbot.weapon.aim.lmg.randomize 4
+lbot.weapon.aim.lmg.smooth 4
+lbot.weapon.aim.lmg.smoothtype "Static"
+lbot.weapon.aim.pistol.curve 0.5
+lbot.weapon.aim.pistol.randomize 4
+lbot.weapon.aim.pistol.smooth 2
+lbot.weapon.aim.pistol.smoothtype "Dynamic"
+lbot.weapon.aim.rifle.curve 0.5
+lbot.weapon.aim.rifle.randomize 4
+lbot.weapon.aim.rifle.smooth 4
+lbot.weapon.aim.rifle.smoothtype "Static"
+lbot.weapon.aim.scout.curve 0.5
+lbot.weapon.aim.scout.randomize 4
+lbot.weapon.aim.scout.smooth 4
+lbot.weapon.aim.scout.smoothtype "Static"
+lbot.weapon.aim.shared.curve 0.5
+lbot.weapon.aim.shared.randomize 4
+lbot.weapon.aim.shared.smooth 4
+lbot.weapon.aim.shared.smoothtype "Static"
+lbot.weapon.aim.shotgun.curve 0.5
+lbot.weapon.aim.shotgun.randomize 4
+lbot.weapon.aim.shotgun.smooth 4
+lbot.weapon.aim.shotgun.smoothtype "Static"
+lbot.weapon.aim.smg.curve 0.5
+lbot.weapon.aim.smg.randomize 4
+lbot.weapon.aim.smg.smooth 4
+lbot.weapon.aim.smg.smoothtype "Static"
+lbot.weapon.aim.sniper.curve 0.5
+lbot.weapon.aim.sniper.randomize 4
+lbot.weapon.aim.sniper.smooth 2
+lbot.weapon.aim.sniper.smoothtype "Dynamic"
+lbot.weapon.aim.zeus.curve 0.5
+lbot.weapon.aim.zeus.randomize 4
+lbot.weapon.aim.zeus.smooth 4
+lbot.weapon.aim.zeus.smoothtype "Static"
+lbot.weapon.target "Pistol"
+lbot.weapon.target.asniper.fsd 50
+lbot.weapon.target.asniper.maxfov 8
+lbot.weapon.target.asniper.minfov 0.5
+lbot.weapon.target.asniper.nst "Off"
+lbot.weapon.target.asniper.tsd 400
+lbot.weapon.target.hpistol.fsd 200
+lbot.weapon.target.hpistol.maxfov 8
+lbot.weapon.target.hpistol.minfov 0.5
+lbot.weapon.target.hpistol.nst "Off"
+lbot.weapon.target.hpistol.tsd 400
+lbot.weapon.target.lmg.fsd 50
+lbot.weapon.target.lmg.maxfov 8
+lbot.weapon.target.lmg.minfov 0.5
+lbot.weapon.target.lmg.nst "Off"
+lbot.weapon.target.lmg.tsd 400
+lbot.weapon.target.pistol.fsd 200
+lbot.weapon.target.pistol.maxfov 8
+lbot.weapon.target.pistol.minfov 0.5
+lbot.weapon.target.pistol.nst "Off"
+lbot.weapon.target.pistol.tsd 400
+lbot.weapon.target.rifle.fsd 50
+lbot.weapon.target.rifle.maxfov 8
+lbot.weapon.target.rifle.minfov 0.5
+lbot.weapon.target.rifle.nst "Off"
+lbot.weapon.target.rifle.tsd 400
+lbot.weapon.target.scout.fsd 50
+lbot.weapon.target.scout.maxfov 8
+lbot.weapon.target.scout.minfov 0.5
+lbot.weapon.target.scout.nst "Off"
+lbot.weapon.target.scout.tsd 400
+lbot.weapon.target.shared.fsd 50
+lbot.weapon.target.shared.maxfov 8
+lbot.weapon.target.shared.minfov 0.5
+lbot.weapon.target.shared.nst "Off"
+lbot.weapon.target.shared.tsd 400
+lbot.weapon.target.shotgun.fsd 50
+lbot.weapon.target.shotgun.maxfov 8
+lbot.weapon.target.shotgun.minfov 0.5
+lbot.weapon.target.shotgun.nst "Off"
+lbot.weapon.target.shotgun.tsd 400
+lbot.weapon.target.smg.fsd 50
+lbot.weapon.target.smg.maxfov 8
+lbot.weapon.target.smg.minfov 0.5
+lbot.weapon.target.smg.nst "Off"
+lbot.weapon.target.smg.tsd 400
+lbot.weapon.target.sniper.fsd 200
+lbot.weapon.target.sniper.maxfov 8
+lbot.weapon.target.sniper.minfov 0.5
+lbot.weapon.target.sniper.nst "Off"
+lbot.weapon.target.sniper.tsd 400
+lbot.weapon.target.zeus.fsd 50
+lbot.weapon.target.zeus.maxfov 8
+lbot.weapon.target.zeus.minfov 0.5
+lbot.weapon.target.zeus.nst "Off"
+lbot.weapon.target.zeus.tsd 400
+lbot.weapon.vis "Pistol"
+lbot.weapon.vis.asniper.autowall "Off"
+lbot.weapon.vis.asniper.smoke "Off"
+lbot.weapon.vis.hpistol.autowall "Off"
+lbot.weapon.vis.hpistol.smoke "Off"
+lbot.weapon.vis.lmg.autowall "Off"
+lbot.weapon.vis.lmg.smoke "Off"
+lbot.weapon.vis.pistol.autowall "Off"
+lbot.weapon.vis.pistol.smoke "Off"
+lbot.weapon.vis.rifle.autowall "Off"
+lbot.weapon.vis.rifle.smoke "Off"
+lbot.weapon.vis.scout.autowall "Off"
+lbot.weapon.vis.scout.smoke "Off"
+lbot.weapon.vis.shared.autowall "Off"
+lbot.weapon.vis.shared.smoke "Off"
+lbot.weapon.vis.shotgun.autowall "Off"
+lbot.weapon.vis.shotgun.smoke "Off"
+lbot.weapon.vis.smg.autowall "Off"
+lbot.weapon.vis.smg.smoke "Off"
+lbot.weapon.vis.sniper.autowall "Off"
+lbot.weapon.vis.sniper.smoke "Off"
+lbot.weapon.vis.zeus.autowall "Off"
+lbot.weapon.vis.zeus.smoke "Off"
+lua.savecfg "On"
+menu 409 194
+misc.antismac "Off"
+misc.antiuntrusted "Off"
+misc.autoaccept "On"
+misc.autojump "Perfect"
+misc.autojumpbug 0
+misc.autothrow "Off"
+misc.autothrowgrenade 2
+misc.autothrowincendiary 4
+misc.bypasscheats "On"
+misc.bypasspure "On"
+misc.chatspam "Off"
+misc.clantag "Off"
+misc.disablecensorship "Off"
+misc.duckjump "Off"
+misc.edgejump 0
+misc.fakelag.condition.inair "On"
+misc.fakelag.condition.moving "On"
+misc.fakelag.condition.peek "Off"
+misc.fakelag.condition.standing "Off"
+misc.fakelag.enable "On"
+misc.fakelag.factor 7
+misc.fakelag.key 0
+misc.fakelag.override.inair "Off"
+misc.fakelag.override.moving "Off"
+misc.fakelag.override.peek "Off"
+misc.fakelag.override.standing "Off"
+misc.fakelag.overridefactor 7
+misc.fakelag.type "Normal"
+misc.fakelatency.amount 200
+misc.fakelatency.enable "On"
+misc.fakelatency.key 0
+misc.fastduck "On"
+misc.invisiblename "Off"
+misc.log.console "On"
+misc.log.purchases "On"
+misc.log.shots.enemyhits "Off"
+misc.log.shots.friendlyhits "Off"
+misc.log.shots.localhits "On"
+misc.log.shots.localmiss "On"
+misc.master "On"
+misc.owreveal "Off"
+misc.playerlist "Off"
+misc.rankreveal "On"
+misc.showspec "On"
+misc.slidewalk "Off"
+misc.stealname 0
+misc.strafe.air "On"
+misc.strafe.circle 0
+misc.strafe.disablenade "Off"
+misc.strafe.enable "On"
+misc.strafe.limit 1
+misc.strafe.mode "Silent"
+misc.strafe.snake 0
+misc.strafe.wasd "On"
+plist 20 20
+plist.bodyaim "Default"
+plist.forcetarget "Off"
+plist.friend.highlight "Off"
+plist.friend.highlight.clr 255 255 255 255
+plist.friend.ignore "Off"
+plist.priority 1
+plist.resolver "Default"
+plist.sp "Default"
+radar 16 16 256 284
+rbot.accuracy.attack "Pistol"
+rbot.accuracy.attack.asniper.fire "Off"
+rbot.accuracy.attack.hpistol.fire "Off"
+rbot.accuracy.attack.knife.fire "Off"
+rbot.accuracy.attack.lmg.fire "Off"
+rbot.accuracy.attack.pistol.fire "Off"
+rbot.accuracy.attack.rifle.fire "Off"
+rbot.accuracy.attack.scout.fire "Off"
+rbot.accuracy.attack.shared.fire "Off"
+rbot.accuracy.attack.shotgun.fire "Off"
+rbot.accuracy.attack.smg.fire "Off"
+rbot.accuracy.attack.sniper.fire "Off"
+rbot.accuracy.attack.zeus.fire "Off"
+rbot.accuracy.auto "Pistol"
+rbot.accuracy.auto.asniper.scopeopts.scope "On"
+rbot.accuracy.auto.asniper.scopeopts.unscope "Off"
+rbot.accuracy.auto.asniper.stopopts.betweenshots "On"
+rbot.accuracy.auto.asniper.stopopts.duck "Off"
+rbot.accuracy.auto.asniper.stopopts.early "Off"
+rbot.accuracy.auto.asniper.stopopts.inair "Off"
+rbot.accuracy.auto.asniper.stopopts.inmolotov "Off"
+rbot.accuracy.auto.asniper.stopopts.slowwalk "Off"
+rbot.accuracy.auto.asniper.stopopts.stop "On"
+rbot.accuracy.auto.hpistol.fire.pistol "On"
+rbot.accuracy.auto.hpistol.fire.revolver "On"
+rbot.accuracy.auto.hpistol.stopopts.betweenshots "Off"
+rbot.accuracy.auto.hpistol.stopopts.duck "Off"
+rbot.accuracy.auto.hpistol.stopopts.early "On"
+rbot.accuracy.auto.hpistol.stopopts.inair "Off"
+rbot.accuracy.auto.hpistol.stopopts.inmolotov "Off"
+rbot.accuracy.auto.hpistol.stopopts.slowwalk "Off"
+rbot.accuracy.auto.hpistol.stopopts.stop "On"
+rbot.accuracy.auto.lmg.stopopts.betweenshots "Off"
+rbot.accuracy.auto.lmg.stopopts.duck "Off"
+rbot.accuracy.auto.lmg.stopopts.early "On"
+rbot.accuracy.auto.lmg.stopopts.inair "Off"
+rbot.accuracy.auto.lmg.stopopts.inmolotov "Off"
+rbot.accuracy.auto.lmg.stopopts.slowwalk "On"
+rbot.accuracy.auto.lmg.stopopts.stop "On"
+rbot.accuracy.auto.pistol.fire.pistol "On"
+rbot.accuracy.auto.pistol.stopopts.betweenshots "On"
+rbot.accuracy.auto.pistol.stopopts.duck "Off"
+rbot.accuracy.auto.pistol.stopopts.early "Off"
+rbot.accuracy.auto.pistol.stopopts.inair "Off"
+rbot.accuracy.auto.pistol.stopopts.inmolotov "Off"
+rbot.accuracy.auto.pistol.stopopts.slowwalk "Off"
+rbot.accuracy.auto.pistol.stopopts.stop "On"
+rbot.accuracy.auto.rifle.stopopts.betweenshots "Off"
+rbot.accuracy.auto.rifle.stopopts.duck "Off"
+rbot.accuracy.auto.rifle.stopopts.early "On"
+rbot.accuracy.auto.rifle.stopopts.inair "Off"
+rbot.accuracy.auto.rifle.stopopts.inmolotov "Off"
+rbot.accuracy.auto.rifle.stopopts.slowwalk "On"
+rbot.accuracy.auto.rifle.stopopts.stop "On"
+rbot.accuracy.auto.scout.fire.pistol "Off"
+rbot.accuracy.auto.scout.scopeopts.scope "On"
+rbot.accuracy.auto.scout.scopeopts.unscope "Off"
+rbot.accuracy.auto.scout.stopopts.betweenshots "Off"
+rbot.accuracy.auto.scout.stopopts.duck "Off"
+rbot.accuracy.auto.scout.stopopts.early "On"
+rbot.accuracy.auto.scout.stopopts.inair "On"
+rbot.accuracy.auto.scout.stopopts.inmolotov "Off"
+rbot.accuracy.auto.scout.stopopts.slowwalk "On"
+rbot.accuracy.auto.scout.stopopts.stop "On"
+rbot.accuracy.auto.shared.fire.pistol "On"
+rbot.accuracy.auto.shared.fire.revolver "On"
+rbot.accuracy.auto.shared.scopeopts.scope "On"
+rbot.accuracy.auto.shared.scopeopts.unscope "Off"
+rbot.accuracy.auto.shared.stopopts.betweenshots "Off"
+rbot.accuracy.auto.shared.stopopts.duck "Off"
+rbot.accuracy.auto.shared.stopopts.early "On"
+rbot.accuracy.auto.shared.stopopts.inair "Off"
+rbot.accuracy.auto.shared.stopopts.inmolotov "Off"
+rbot.accuracy.auto.shared.stopopts.slowwalk "On"
+rbot.accuracy.auto.shared.stopopts.stop "On"
+rbot.accuracy.auto.shotgun.stopopts.betweenshots "Off"
+rbot.accuracy.auto.shotgun.stopopts.duck "Off"
+rbot.accuracy.auto.shotgun.stopopts.early "On"
+rbot.accuracy.auto.shotgun.stopopts.inair "Off"
+rbot.accuracy.auto.shotgun.stopopts.inmolotov "Off"
+rbot.accuracy.auto.shotgun.stopopts.slowwalk "On"
+rbot.accuracy.auto.shotgun.stopopts.stop "On"
+rbot.accuracy.auto.smg.stopopts.betweenshots "On"
+rbot.accuracy.auto.smg.stopopts.duck "Off"
+rbot.accuracy.auto.smg.stopopts.early "Off"
+rbot.accuracy.auto.smg.stopopts.inair "On"
+rbot.accuracy.auto.smg.stopopts.inmolotov "Off"
+rbot.accuracy.auto.smg.stopopts.slowwalk "Off"
+rbot.accuracy.auto.smg.stopopts.stop "On"
+rbot.accuracy.auto.sniper.fire.pistol "Off"
+rbot.accuracy.auto.sniper.scopeopts.scope "On"
+rbot.accuracy.auto.sniper.scopeopts.unscope "Off"
+rbot.accuracy.auto.sniper.stopopts.betweenshots "Off"
+rbot.accuracy.auto.sniper.stopopts.duck "Off"
+rbot.accuracy.auto.sniper.stopopts.early "On"
+rbot.accuracy.auto.sniper.stopopts.inair "Off"
+rbot.accuracy.auto.sniper.stopopts.inmolotov "Off"
+rbot.accuracy.auto.sniper.stopopts.slowwalk "Off"
+rbot.accuracy.auto.sniper.stopopts.stop "On"
+rbot.accuracy.auto.zeus.stopopts.betweenshots "Off"
+rbot.accuracy.auto.zeus.stopopts.duck "Off"
+rbot.accuracy.auto.zeus.stopopts.early "On"
+rbot.accuracy.auto.zeus.stopopts.inair "Off"
+rbot.accuracy.auto.zeus.stopopts.inmolotov "Off"
+rbot.accuracy.auto.zeus.stopopts.slowwalk "On"
+rbot.accuracy.auto.zeus.stopopts.stop "On"
+rbot.accuracy.movement.quickstop "On"
+rbot.accuracy.movement.slowkey 16
+rbot.accuracy.movement.slowspeed 16
+rbot.accuracy.walkbot.peek "On"
+rbot.accuracy.walkbot.peekind "On"
+rbot.accuracy.walkbot.peekind.clr1 193 154 164 255
+rbot.accuracy.walkbot.peekind.clr2 193 154 164 255
+rbot.accuracy.walkbot.peekkey 88
+rbot.accuracy.walkbot.peekorigin "Off"
+rbot.accuracy.walkbot.peektype "Hold"
+rbot.aim.aimadj.antirecoil "On"
+rbot.aim.aimadj.silentaim "Off"
+rbot.aim.enable "Automatic"
+rbot.aim.knife "Off"
+rbot.aim.posadj.backtrack "On"
+rbot.aim.posadj.futureaim "Off"
+rbot.aim.posadj.prioritybacktrack "Off"
+rbot.aim.posadj.resolver "Resolve"
+rbot.aim.target.fov 75
+rbot.aim.target.lock "On"
+rbot.aim.target.selection "Closest To Crosshair"
+rbot.antiaim.advanced.antiresolver "Off"
+rbot.antiaim.advanced.pitch "Off"
+rbot.antiaim.advanced.roll "Off"
+rbot.antiaim.base "6 Desync"
+rbot.antiaim.base.occluded "Off"
+rbot.antiaim.base.occluded.clr 147 149 166 150
+rbot.antiaim.base.overlay.glow "Off"
+rbot.antiaim.base.overlay.glow.clr 255 255 255 255
+rbot.antiaim.base.overlay.glowhealth "Off"
+rbot.antiaim.base.overlay.glowhealth.healthclr1 255 0 0 255
+rbot.antiaim.base.overlay.glowhealth.healthclr2 0 255 0 255
+rbot.antiaim.base.overlay.wireframe "Off"
+rbot.antiaim.base.overlay.wireframe.clr 255 255 255 25
+rbot.antiaim.base.rotation -58
+rbot.antiaim.base.spinspeed 60
+rbot.antiaim.base.visible "Textured"
+rbot.antiaim.base.visible.clr 0 21 255 255
+rbot.antiaim.condition.autodir.edges "Off"
+rbot.antiaim.condition.autodir.targets "Off"
+rbot.antiaim.condition.freezetime "Off"
+rbot.antiaim.condition.grenade "Off"
+rbot.antiaim.condition.knife "Off"
+rbot.antiaim.condition.use "On"
+rbot.antiaim.extra.exposefake 0
+rbot.antiaim.extra.exposetype "1s"
+rbot.antiaim.extra.fakecrouchkey 18
+rbot.antiaim.left "60 Desync"
+rbot.antiaim.left.occluded "Off"
+rbot.antiaim.left.occluded.clr 147 149 166 150
+rbot.antiaim.left.overlay.glow "Off"
+rbot.antiaim.left.overlay.glow.clr 255 255 255 255
+rbot.antiaim.left.overlay.glowhealth "Off"
+rbot.antiaim.left.overlay.glowhealth.healthclr1 255 0 0 255
+rbot.antiaim.left.overlay.glowhealth.healthclr2 0 255 0 255
+rbot.antiaim.left.overlay.wireframe "Off"
+rbot.antiaim.left.overlay.wireframe.clr 255 255 255 25
+rbot.antiaim.left.rotation -58
+rbot.antiaim.left.spinspeed 60
+rbot.antiaim.left.visible "Textured"
+rbot.antiaim.left.visible.clr 0 21 255 255
+rbot.antiaim.right "-60 Desync"
+rbot.antiaim.right.occluded "Off"
+rbot.antiaim.right.occluded.clr 147 149 166 150
+rbot.antiaim.right.overlay.glow "Off"
+rbot.antiaim.right.overlay.glow.clr 255 255 255 255
+rbot.antiaim.right.overlay.glowhealth "Off"
+rbot.antiaim.right.overlay.glowhealth.healthclr1 255 0 0 255
+rbot.antiaim.right.overlay.glowhealth.healthclr2 0 255 0 255
+rbot.antiaim.right.overlay.wireframe "Off"
+rbot.antiaim.right.overlay.wireframe.clr 255 255 255 25
+rbot.antiaim.right.rotation 58
+rbot.antiaim.right.spinspeed 60
+rbot.antiaim.right.visible "Textured"
+rbot.antiaim.right.visible.clr 0 21 255 255
+rbot.catware_kforcebaim "Off"
+rbot.catware_kfreestand "Off"
+rbot.catware_kinverter "On"
+rbot.catware_kpitchdown "Off"
+rbot.catware_sdesync 58
+rbot.catware_sfreestand 60
+rbot.catware_spitch 0
+rbot.catware_sroll 45
+rbot.catware_syaw 6
+rbot.catware_unsafe "On"
+rbot.hitscan.accuracy "Pistol"
+rbot.hitscan.accuracy.asniper.adaptivedamage "Off"
+rbot.hitscan.accuracy.asniper.autowall "On"
+rbot.hitscan.accuracy.asniper.hitchance 60
+rbot.hitscan.accuracy.asniper.hitchanceburst 25
+rbot.hitscan.accuracy.asniper.mindamage 35
+rbot.hitscan.accuracy.hpistol.adaptivedamage "Off"
+rbot.hitscan.accuracy.hpistol.autowall "On"
+rbot.hitscan.accuracy.hpistol.hitchance 60
+rbot.hitscan.accuracy.hpistol.hitchanceburst 25
+rbot.hitscan.accuracy.hpistol.mindamage 40
+rbot.hitscan.accuracy.lmg.adaptivedamage "On"
+rbot.hitscan.accuracy.lmg.autowall "On"
+rbot.hitscan.accuracy.lmg.hitchance 50
+rbot.hitscan.accuracy.lmg.hitchanceburst 25
+rbot.hitscan.accuracy.lmg.mindamage 1
+rbot.hitscan.accuracy.pistol.adaptivedamage "Off"
+rbot.hitscan.accuracy.pistol.autowall "On"
+rbot.hitscan.accuracy.pistol.hitchance 30
+rbot.hitscan.accuracy.pistol.hitchanceburst 25
+rbot.hitscan.accuracy.pistol.mindamage 25
+rbot.hitscan.accuracy.rifle.adaptivedamage "On"
+rbot.hitscan.accuracy.rifle.autowall "On"
+rbot.hitscan.accuracy.rifle.hitchance 50
+rbot.hitscan.accuracy.rifle.hitchanceburst 25
+rbot.hitscan.accuracy.rifle.mindamage 1
+rbot.hitscan.accuracy.scout.adaptivedamage "Off"
+rbot.hitscan.accuracy.scout.autowall "On"
+rbot.hitscan.accuracy.scout.hitchance 70
+rbot.hitscan.accuracy.scout.hitchanceburst 25
+rbot.hitscan.accuracy.scout.mindamage 100
+rbot.hitscan.accuracy.shared.adaptivedamage "Off"
+rbot.hitscan.accuracy.shared.autowall "On"
+rbot.hitscan.accuracy.shared.hitchance 30
+rbot.hitscan.accuracy.shared.hitchanceburst 25
+rbot.hitscan.accuracy.shared.mindamage 20
+rbot.hitscan.accuracy.shotgun.adaptivedamage "On"
+rbot.hitscan.accuracy.shotgun.autowall "On"
+rbot.hitscan.accuracy.shotgun.hitchance 50
+rbot.hitscan.accuracy.shotgun.hitchanceburst 25
+rbot.hitscan.accuracy.shotgun.mindamage 1
+rbot.hitscan.accuracy.smg.adaptivedamage "Off"
+rbot.hitscan.accuracy.smg.autowall "On"
+rbot.hitscan.accuracy.smg.hitchance 20
+rbot.hitscan.accuracy.smg.hitchanceburst 25
+rbot.hitscan.accuracy.smg.mindamage 1
+rbot.hitscan.accuracy.sniper.adaptivedamage "Off"
+rbot.hitscan.accuracy.sniper.autowall "On"
+rbot.hitscan.accuracy.sniper.hitchance 90
+rbot.hitscan.accuracy.sniper.hitchanceburst 25
+rbot.hitscan.accuracy.sniper.mindamage 100
+rbot.hitscan.accuracy.zeus.adaptivedamage "On"
+rbot.hitscan.accuracy.zeus.autowall "On"
+rbot.hitscan.accuracy.zeus.hitchance 50
+rbot.hitscan.accuracy.zeus.hitchanceburst 25
+rbot.hitscan.accuracy.zeus.mindamage 1
+rbot.hitscan.extra "Pistol"
+rbot.hitscan.extra.asniper.safepoint.body "Off"
+rbot.hitscan.extra.asniper.safepoint.forcebody "Off"
+rbot.hitscan.extra.asniper.safepoint.forcehead "Off"
+rbot.hitscan.extra.asniper.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.asniper.safepoint.head "On"
+rbot.hitscan.extra.asniper.safepoint.limbs "Off"
+rbot.hitscan.extra.asniper.safepred "Off"
+rbot.hitscan.extra.hpistol.safepoint.body "Off"
+rbot.hitscan.extra.hpistol.safepoint.forcebody "Off"
+rbot.hitscan.extra.hpistol.safepoint.forcehead "Off"
+rbot.hitscan.extra.hpistol.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.hpistol.safepoint.head "On"
+rbot.hitscan.extra.hpistol.safepoint.limbs "Off"
+rbot.hitscan.extra.hpistol.safepred "Off"
+rbot.hitscan.extra.lmg.safepoint.body "Off"
+rbot.hitscan.extra.lmg.safepoint.forcebody "Off"
+rbot.hitscan.extra.lmg.safepoint.forcehead "Off"
+rbot.hitscan.extra.lmg.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.lmg.safepoint.head "On"
+rbot.hitscan.extra.lmg.safepoint.limbs "Off"
+rbot.hitscan.extra.lmg.safepred "Off"
+rbot.hitscan.extra.pistol.safepoint.body "Off"
+rbot.hitscan.extra.pistol.safepoint.forcebody "Off"
+rbot.hitscan.extra.pistol.safepoint.forcehead "Off"
+rbot.hitscan.extra.pistol.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.pistol.safepoint.head "On"
+rbot.hitscan.extra.pistol.safepoint.limbs "Off"
+rbot.hitscan.extra.pistol.safepred "Off"
+rbot.hitscan.extra.rifle.safepoint.body "Off"
+rbot.hitscan.extra.rifle.safepoint.forcebody "Off"
+rbot.hitscan.extra.rifle.safepoint.forcehead "Off"
+rbot.hitscan.extra.rifle.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.rifle.safepoint.head "On"
+rbot.hitscan.extra.rifle.safepoint.limbs "Off"
+rbot.hitscan.extra.rifle.safepred "Off"
+rbot.hitscan.extra.scout.safepoint.body "Off"
+rbot.hitscan.extra.scout.safepoint.forcebody "Off"
+rbot.hitscan.extra.scout.safepoint.forcehead "Off"
+rbot.hitscan.extra.scout.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.scout.safepoint.head "On"
+rbot.hitscan.extra.scout.safepoint.limbs "Off"
+rbot.hitscan.extra.scout.safepred "Off"
+rbot.hitscan.extra.shared.safepoint.body "Off"
+rbot.hitscan.extra.shared.safepoint.forcebody "Off"
+rbot.hitscan.extra.shared.safepoint.forcehead "Off"
+rbot.hitscan.extra.shared.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.shared.safepoint.head "Off"
+rbot.hitscan.extra.shared.safepoint.limbs "Off"
+rbot.hitscan.extra.shared.safepred "Off"
+rbot.hitscan.extra.shotgun.safepoint.body "Off"
+rbot.hitscan.extra.shotgun.safepoint.forcebody "Off"
+rbot.hitscan.extra.shotgun.safepoint.forcehead "Off"
+rbot.hitscan.extra.shotgun.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.shotgun.safepoint.head "On"
+rbot.hitscan.extra.shotgun.safepoint.limbs "Off"
+rbot.hitscan.extra.shotgun.safepred "Off"
+rbot.hitscan.extra.smg.safepoint.body "Off"
+rbot.hitscan.extra.smg.safepoint.forcebody "Off"
+rbot.hitscan.extra.smg.safepoint.forcehead "Off"
+rbot.hitscan.extra.smg.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.smg.safepoint.head "Off"
+rbot.hitscan.extra.smg.safepoint.limbs "Off"
+rbot.hitscan.extra.smg.safepred "Off"
+rbot.hitscan.extra.sniper.safepoint.body "Off"
+rbot.hitscan.extra.sniper.safepoint.forcebody "Off"
+rbot.hitscan.extra.sniper.safepoint.forcehead "Off"
+rbot.hitscan.extra.sniper.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.sniper.safepoint.head "On"
+rbot.hitscan.extra.sniper.safepoint.limbs "Off"
+rbot.hitscan.extra.sniper.safepred "Off"
+rbot.hitscan.extra.zeus.safepoint.body "Off"
+rbot.hitscan.extra.zeus.safepoint.forcebody "Off"
+rbot.hitscan.extra.zeus.safepoint.forcehead "Off"
+rbot.hitscan.extra.zeus.safepoint.forcelimbs "Off"
+rbot.hitscan.extra.zeus.safepoint.head "On"
+rbot.hitscan.extra.zeus.safepoint.limbs "Off"
+rbot.hitscan.extra.zeus.safepred "Off"
+rbot.hitscan.hitbox "Pistol"
+rbot.hitscan.hitbox.asniper.body.exposed "On"
+rbot.hitscan.hitbox.asniper.body.lethal "On"
+rbot.hitscan.hitbox.asniper.body.priority "Off"
+rbot.hitscan.hitbox.asniper.head.exposed "Off"
+rbot.hitscan.hitbox.asniper.head.priority "On"
+rbot.hitscan.hitbox.asniper.limbs.exposed "On"
+rbot.hitscan.hitbox.hpistol.body.exposed "Off"
+rbot.hitscan.hitbox.hpistol.body.lethal "On"
+rbot.hitscan.hitbox.hpistol.body.priority "Off"
+rbot.hitscan.hitbox.hpistol.head.exposed "Off"
+rbot.hitscan.hitbox.hpistol.head.priority "On"
+rbot.hitscan.hitbox.hpistol.limbs.exposed "Off"
+rbot.hitscan.hitbox.lmg.body.exposed "Off"
+rbot.hitscan.hitbox.lmg.body.lethal "On"
+rbot.hitscan.hitbox.lmg.body.priority "Off"
+rbot.hitscan.hitbox.lmg.head.exposed "Off"
+rbot.hitscan.hitbox.lmg.head.priority "On"
+rbot.hitscan.hitbox.lmg.limbs.exposed "Off"
+rbot.hitscan.hitbox.pistol.body.exposed "Off"
+rbot.hitscan.hitbox.pistol.body.lethal "On"
+rbot.hitscan.hitbox.pistol.body.priority "Off"
+rbot.hitscan.hitbox.pistol.head.exposed "Off"
+rbot.hitscan.hitbox.pistol.head.priority "On"
+rbot.hitscan.hitbox.pistol.limbs.exposed "Off"
+rbot.hitscan.hitbox.rifle.body.exposed "Off"
+rbot.hitscan.hitbox.rifle.body.lethal "On"
+rbot.hitscan.hitbox.rifle.body.priority "Off"
+rbot.hitscan.hitbox.rifle.head.exposed "Off"
+rbot.hitscan.hitbox.rifle.head.priority "On"
+rbot.hitscan.hitbox.rifle.limbs.exposed "Off"
+rbot.hitscan.hitbox.scout.body.exposed "Off"
+rbot.hitscan.hitbox.scout.body.lethal "On"
+rbot.hitscan.hitbox.scout.body.priority "Off"
+rbot.hitscan.hitbox.scout.head.exposed "Off"
+rbot.hitscan.hitbox.scout.head.priority "On"
+rbot.hitscan.hitbox.scout.limbs.exposed "Off"
+rbot.hitscan.hitbox.shared.body.exposed "Off"
+rbot.hitscan.hitbox.shared.body.lethal "On"
+rbot.hitscan.hitbox.shared.body.priority "Off"
+rbot.hitscan.hitbox.shared.head.exposed "Off"
+rbot.hitscan.hitbox.shared.head.priority "On"
+rbot.hitscan.hitbox.shared.limbs.exposed "Off"
+rbot.hitscan.hitbox.shotgun.body.exposed "Off"
+rbot.hitscan.hitbox.shotgun.body.lethal "On"
+rbot.hitscan.hitbox.shotgun.body.priority "Off"
+rbot.hitscan.hitbox.shotgun.head.exposed "Off"
+rbot.hitscan.hitbox.shotgun.head.priority "On"
+rbot.hitscan.hitbox.shotgun.limbs.exposed "Off"
+rbot.hitscan.hitbox.smg.body.exposed "Off"
+rbot.hitscan.hitbox.smg.body.lethal "On"
+rbot.hitscan.hitbox.smg.body.priority "Off"
+rbot.hitscan.hitbox.smg.head.exposed "Off"
+rbot.hitscan.hitbox.smg.head.priority "On"
+rbot.hitscan.hitbox.smg.limbs.exposed "On"
+rbot.hitscan.hitbox.sniper.body.exposed "On"
+rbot.hitscan.hitbox.sniper.body.lethal "On"
+rbot.hitscan.hitbox.sniper.body.priority "Off"
+rbot.hitscan.hitbox.sniper.head.exposed "Off"
+rbot.hitscan.hitbox.sniper.head.priority "On"
+rbot.hitscan.hitbox.sniper.limbs.exposed "On"
+rbot.hitscan.hitbox.zeus.body.exposed "Off"
+rbot.hitscan.hitbox.zeus.body.lethal "On"
+rbot.hitscan.hitbox.zeus.body.priority "Off"
+rbot.hitscan.hitbox.zeus.head.exposed "Off"
+rbot.hitscan.hitbox.zeus.head.priority "On"
+rbot.hitscan.hitbox.zeus.limbs.exposed "Off"
+rbot.master "On"
+spectators 296 5
+theme.footer.bg 193 154 164 255
+theme.footer.text 201 201 201 0
+theme.header.bg 193 154 164 255
+theme.header.line 193 154 164 255
+theme.header.text 201 201 201 255
+theme.nav.active 193 154 164 255
+theme.nav.bg 193 154 164 255
+theme.nav.shadow 25 25 25 255
+theme.nav.text 255 255 255 255
+theme.tablist.shadow 31 31 31 255
+theme.tablist.tabactivebg 31 31 31 255
+theme.tablist.tabdecorator 31 31 31 255
+theme.tablist.text 201 201 201 255
+theme.tablist.text2 201 201 201 255
+theme.ui2.border 21 21 21 0
+theme.ui2.lowpoly1 21 21 21 255
+theme.ui2.lowpoly2 21 21 21 255
+unbindall
+bindhold "Mouse4" rbot.hitscan.accuracy.scout.mindamage "100" "10" 0
+bindhold "Mouse4" rbot.hitscan.accuracy.hpistol.mindamage "40" "10" 1
+bindhold "Mouse4" rbot.hitscan.accuracy.pistol.mindamage "25" "5" 2
+bindhold "Mouse4" rbot.hitscan.accuracy.sniper.mindamage "100" "10" 3
+bindhold "Mouse4" rbot.hitscan.accuracy.asniper.mindamage "35" "5" 4
+bindtoggle "F" rbot.catware_kinverter "Off" "On" 0
+bindtoggle "F" rbot.catware_kinverter "Off" "On" 1
+bindtoggle "N" rbot.catware_kforcebaim "Off" "On" 0
+bindtoggle "V" esp.world.thirdperson "Off" "On" 0
+bindhold "X" rbot.catware_kfreestand "Off" "On" 0
+bindhold "X" rbot.catware_kfreestand "Off" "On" 1
+unalias
+alias invertrot "rbot.antiaim.rotation"
+alias espon "esp.overlay.enemy.name 1; esp.overlay.enemy.health.healthbar 1; esp.chams.enemy.occluded glow"
+alias espoff "esp.overlay.enemy.name 0; esp.overlay.enemy.health.healthbar 0; esp.chams.enemy.occluded off"
+alias autodir1 "rbot.antiaim.left -157.0 Desync; rbot.antiaim.left.lby 100.0; rbot.antiaim.left.rotation -58.0; rbot.antiaim.right -175.0 Desync; rbot.antiaim.right.lby -100.0; rbot.antiaim.right.rotation 58.0; bind Mouse5 autodir2"
+alias autodir2 "rbot.antiaim.left 90.0 Desync; rbot.antiaim.left.lby 0.0; rbot.antiaim.left.rotation 58.0; rbot.antiaim.right -90.0 Desync; rbot.antiaim.right.lby 0.0; rbot.antiaim.right.rotation 58.0; bind Mouse5 autodir1"
+alias cls "clear"
+alias lyb "rbot.antiaim.advanced.antialign"
+alias micro "rbot.antiaim.advanced.antialign"
+alias autowallon "rbot.hitscan.mode.pistol.autowall 1; rbot.hitscan.mode.hpistol.autowall 1; rbot.hitscan.mode.smg.autowall 1; rbot.hitscan.mode.rifle.autowall 1; rbot.hitscan.mode.shotgun.autowall 1; rbot.hitscan.mode.scout.autowall 1; rbot.hitscan.mode.asniper.autowall 1; rbot.hitscan.mode.sniper.autowall 1; rbot.hitscan.mode.lmg.autowall 1; rbot.accuracy.weapon.sniper.mindmg 100;"
+alias autowalloff "rbot.hitscan.mode.pistol.autowall 0; rbot.hitscan.mode.hpistol.autowall 0; rbot.hitscan.mode.smg.autowall 0; rbot.hitscan.mode.rifle.autowall 0; rbot.hitscan.mode.shotgun.autowall 0; rbot.hitscan.mode.scout.autowall 0; rbot.hitscan.mode.asniper.autowall 0; rbot.hitscan.mode.sniper.autowall 0; rbot.hitscan.mode.lmg.autowall 0; rbot.accuracy.weapon.sniper.mindmg 100; rbot.accuracy.weapon.pistol.mindmg 25; rbot.accuracy.weapon.hpistol.mindmg 60; rbot.accuracy.weapon.smg.mindmg 24; rbot.accuracy.weapon.rifle.mindmg 90; rbot.accuracy.weapon.shotgun.mindmg 10; rbot.accuracy.weapon.scout.mindmg 80; rbot.accuracy.weapon.asniper.mindmg 15; rbot.accuracy.weapon.lmg.mindmg 50; rbot.accuracy.weapon.zeus.mindmg 100;"
+alias auto10 "rbot.accuracy.weapon.pistol.mindmg 10; rbot.accuracy.weapon.zeus.mindmg 10; rbot.accuracy.weapon.hpistol.mindmg 10; rbot.accuracy.weapon.smg.mindmg 10; rbot.accuracy.weapon.rifle.mindmg 10; rbot.accuracy.weapon.shotgun.mindmg 10; rbot.accuracy.weapon.scout.mindmg 10; rbot.accuracy.weapon.asniper.mindmg 10; rbot.accuracy.weapon.sniper.mindmg 10; rbot.accuracy.weapon.lmg.mindmg 10;"
+alias hsbc "hitscan_backtrack_only"
+alias hsbc1 "hitscan_backtrack_only"
+alias bt_dev "hitscan_backtrack_only"
+alias bt_dev1 "hitscan_backtrack_only"
+skin.clear
+skin.add "weapon_deagle" "cu_deagle_kitch" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_awp" "cu_awp_chroma_pink" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_ak47" "cu_ak_neon_rider" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_glock" "cu_glock_eyecontact" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_usp_silencer" "cu_usp_cut" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_m4a1_silencer" "gs_m4a1_decimator" "0.01" "" "" "" "" "" "" "" ""
+skin.add "sporty_gloves" "sporty_blue_pink" "0.01" "" "" "" "" "" "" "" ""
+skin.add "weapon_bayonet" "am_doppler_phase2" "0" "" "" "" "" "" "" "" ""
+skin.add "customplayer_tm_jungle_raider_variante" "" "0" "" "" "" "" "" "" "" ""
+skin.add "customplayer_ctm_gendarmerie_variantc" "" "0" "" "" "" "" "" "" "" ""
+skin.add "weapon_knife_karambit" "cu_karam_lore" "0.099999994" "2435343" "" "allah" "" "" "" "" ""
