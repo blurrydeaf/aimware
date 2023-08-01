@@ -32,7 +32,7 @@ end
 
 
 --##### REFERENCE #####
-local rb_reference		= gui.Reference("SETTINGS")
+local rb_reference		= gui.Reference("MISC")
 	local rb_tab			= gui.Tab(rb_reference, "catware_script", "CATWARE.lua")
 		local rb_box			= gui.Groupbox(rb_tab, "Welcome Semirager! ", 10, 5, 300, 1)
 			local rb_enable			= gui.Checkbox(rb_box, "catware_enable", "Enable Master", true)
@@ -40,7 +40,7 @@ local rb_reference		= gui.Reference("SETTINGS")
 				rb_unsafe:SetDescription("*WARNNING* Lower your trust factor")
 
 --##### FEATURE #####
-local rb_feature		= gui.Groupbox(rb_tab, "Feature", 320, 260, 300, 1)
+local rb_feature		= gui.Groupbox(rb_tab, "Feature", 320, 290, 300, 1)
 	local rb_unmuted		= gui.Checkbox(rb_feature, "catware_unmuted", "Auto unmuted", 1)
 	local rb_walkslide		= gui.Checkbox(rb_feature, 'catware_slidewalk', 'Reverse Slide Walk', false);
 	local rb_indicator		= gui.Checkbox(rb_feature, "catware_watermark", "Enable indicator", true);
@@ -84,7 +84,6 @@ print("###################################")
 	local vertical, horizontal = 30, 70;
 	local weapons = {"shared","zeus","pistol","hpistol","smg","rifle","shotgun","scout","asniper","sniper","lmg"}
 	local font_indicator = draw.CreateFont("Tahoma", 17, 1300)
-	local key_fakeduck = gui.GetValue("rbot.antiaim.extra.fakecrouchkey")
 	local silent = gui.GetValue("rbot.aim.aimadj.silentaim")
 	
 	
@@ -116,7 +115,7 @@ local function indicator_func()
 	local extraY = 30
 	local sideextraY = -50
 	
-	if gui.GetValue("catware_script.catware_unsafe") == true then
+	if gui.GetValue("misc.catware_script.catware_unsafe") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(250, 50, 50, 250)
 		draw.TextShadow(10 , indCenterY / 2 + sideextraY , "UNSAFE");
@@ -133,33 +132,34 @@ local function indicator_func()
 		draw.Text(10 , indCenterY / 2 + sideextraY, "RAGE " .. gui.GetValue("rbot.aim.target.fov") .. "º")
 		sideextraY = sideextraY + 17
 	end
-	if gui.GetValue("catware_script.catware_kfreestand") == true and gui.GetValue("rbot.master") == true and gui.GetValue("catware_script.catware_unsafe") == true then
+	if gui.GetValue("misc.catware_script.catware_kfreestand") == true and gui.GetValue("rbot.master") == true and gui.GetValue("misc.catware_script.catware_unsafe") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "EDGE")
 		extraY = extraY + 15
 	end
-	if gui.GetValue("catware_script.catware_kforcebaim") == true and gui.GetValue("rbot.master") == true then
+	if gui.GetValue("misc.catware_script.catware_kforcebaim") == true and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY , "BAIM")
 		extraY = extraY + 15
 
 	end
-	if gui.GetValue("catware_script.catware_unsafe") == true and gui.GetValue("rbot.master") == true and gui.GetValue("catware_script.catware_kpitchdown") == true or gui.GetValue("rbot.antiaim.advanced.pitch") == 1 then
+	if gui.GetValue("misc.catware_script.catware_unsafe") == true and gui.GetValue("rbot.master") == true and gui.GetValue("misc.catware_script.catware_kpitchdown") == true or gui.GetValue("rbot.antiaim.advanced.pitch") == 1 then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
-		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH " .. gui.GetValue("catware_script.catware_spitch") .. "°")
+		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH " .. gui.GetValue("misc.catware_script.catware_spitch") .. "°")
 		extraY = extraY + 15
 	end
-	if gui.GetValue("catware_script.catware_autowall") == true and gui.GetValue("rbot.master") == true then
+	if gui.GetValue("misc.catware_script.catware_autowall") == true and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "AWALL")
 		extraY = extraY + 15
 	end
+	
 
-
+	local key_fakeduck = gui.GetValue("rbot.antiaim.extra.fakecrouchkey")
 	if input.IsButtonDown(key_fakeduck) and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
@@ -229,7 +229,7 @@ local function pitch_func(cmd)
 	local local_player = entities.GetLocalPlayer()
 	if local_player == nil or not local_player:IsAlive() then return end
 	local weapon_id = local_player:GetWeaponID()
-	if weapon_id > 42 and weapon_id < 49 then return end --getting error  nil when change team/join
+	if weapon_id > 42 and weapon_id < 49 then return end --getting error  nil 
 
 	if rb_kpitchdown:GetValue() and bit.band(cmd.buttons, bit.lshift(1, 0)) ~= 1 then
 		cmd.viewangles = EulerAngles(rb_spitchdown:GetValue(), cmd.viewangles.y, cmd.viewangles.z)
