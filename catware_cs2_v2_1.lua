@@ -44,7 +44,7 @@ local ct2_antiaim		= gui.Groupbox(ct2_tab, "AntiAim", 10, 160, 300, 1)
 --##### VARIABLE #####
 	local cat_icon = "🐱";
 	local spacer = " ";
-	local version = " 2.1";
+	local version = " v2.1";
     local script_name = "CATWARE" .. version .. "";
 	local player_name = cheat.GetUserName()
 	--local player_fps = 1 / globals.AbsoluteFrameTime()
@@ -83,7 +83,7 @@ callbacks.Register("Draw", unsafe_func)
 --########## WATERMARK ########## 
 local function watermark_func()
 
-	local watermarkText = spacer .. cat_icon .. spacer .. script_name .. spacer .. player_name .. spacer .. cat_icon .. spacer
+	local watermarkText = spacer .. cat_icon .. spacer .. script_name .. spacer .. cat_icon .. spacer
 
 	draw.SetFont(font_watermark); 
 	draw.Color(10, 10, 10, 150);
@@ -147,6 +147,14 @@ local function indicator_func()
 		draw.TextShadow(10 , indCenterY / 2 + sideextraY , "SILENT");
 		sideextraY = sideextraY + 17
 	end
+--[[
+	if gui.GetValue("misc.catware_script.catware_sroll") > 1 and gui.GetValue("rbot.master") == true and gui.GetValue("misc.catware_script.catware_unsafe") == true then
+		draw.SetFont(font_indicator);
+		draw.Color(200, 150, 150, 250)
+		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "ROLL ") -- .. gui.GetValue("misc.catware_script.catware_sroll") .. "º")
+		extraY = extraY + 15
+	end
+--]]
 	if ct2_autowall:GetValue() == true and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
@@ -172,7 +180,15 @@ local function indicator_func()
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH ")
 		extraY = extraY + 15
 	end
-]
+--[[
+	local key_fakeduck = gui.GetValue("rbot.antiaim.extra.fakecrouchkey")
+	if input.IsButtonDown(key_fakeduck) and gui.GetValue("rbot.master") == true then
+		draw.SetFont(font_indicator);
+		draw.Color(200, 150, 150, 250)
+		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "FAKEDUCK")
+		extraY = extraY + 15
+	end
+--]]
 
 end
 callbacks.Register("Draw", indicator_func)
@@ -262,13 +278,13 @@ local function pitchdown_func()
 	if ct2_enable:GetValue() == true and ct2_unsafe:GetValue() == true then
 		if ct2_kpitchdown:GetValue() then
 			gui.SetValue("rbot.antiaim.advanced.pitch", 1)
-			--gui.SetValue("rbot.antiaim.condition.autodir.targets", true)
+			gui.SetValue("rbot.antiaim.condition.autodir.targets", true)
 			gui.SetValue("rbot.antiaim.base", "180 Backward")
 		else
 			gui.SetValue("rbot.antiaim.advanced.pitch", 0)
-			--gui.SetValue("rbot.antiaim.condition.autodir.targets", false)
+			gui.SetValue("rbot.antiaim.condition.autodir.targets", false)
 			gui.SetValue("rbot.antiaim.base", "Off")
 		end
 	end
 end
-callbacks.Register("Draw", pitchdown_func)
+callbacks.Register("Draw", pitchdown_func) 
