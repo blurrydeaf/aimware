@@ -1,5 +1,5 @@
-The script lua for aimware support v5.1.x, game CSGO
-Update last  1 August 2023
+The script lua for aimware support v5.1.x, game both CSGO and CS 2 beta
+Update last 6 September 2023
 
 ### Features ###
 + Invert the switch Antiaim,
@@ -8,17 +8,25 @@ Update last  1 August 2023
 + Force bodyaim, Autowall, Slidwalk spam
 + Remover auto-muted, Indicators, Watermark
 + Switch to Legitbot/Ragebot
++ Clantag and Jumpshot fixed
 
 ### Preview###
-[img=600x450]https://imageupload.io/ib/SQrAd0CHf5hfw8n_1690918064.jpg[/img]
+[img=600x450]https://imageupload.io/ib/iKllqvoiTfBFKz8_1693952862.png[/img]
 
 ### Changelog ###
 v1.0 Release, 
 v1.1 Added remover muted and Force bobyaim
 v1.2 Added Autowall, watermark, indicators, Switch Master legitbot&ragebot and reverse slidewalk, Improve unsafe mode
+v1.3 Fixed Jumpshot and added clantag 
+v2.1 Release CS 2 beta
 
-### Download ###
-🌺 [url=https://github.com/blurrydeaf/catware.aimware/blob/main/Catware.lua]Script Lua RAW [/url]
-🌸 [url=https://aimware.net/forum/thread/172048]Free Config. Semirage Roll [/url]
+### Download  CSGO ###
+🌺 [url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/catware_v1.3.lua] RAW catware v1.3  CSGO [/url]
+🌸 [url=https://aimware.net/forum/thread/172048]  Config. Semirage Roll CSGO [/url]
 
-Leave +rep on 💗 [url=https://aimware.net/forum/user/61632]my profile [/url]if enjoy using this script!
+### Download  CS 2 Beta ###
+🌺 [url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/catware_cs2_v2_1.lua] RAW catware v2.1 CS 2 [/url]
+🌷 [url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/semilegit_catware_v21.cfg] Config. SemiLegit CS 2 [/url]
+
+Leave +rep on 💗 [url=https://aimware.net/forum/user/61632/reputation/add] my profile [/url] 
+
