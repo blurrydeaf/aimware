@@ -85,24 +85,25 @@ local function watermark_func()
 
 	local watermarkText = spacer .. cat_icon .. spacer .. script_name .. spacer .. cat_icon .. spacer
 
-	draw.SetFont(font_watermark); 
-	draw.Color(10, 10, 10, 150);
-	draw.FilledRect((size_x - 10) - draw.GetTextSize(watermarkText), 5, size_x - 5, vertical );
-	draw.Color(200, 150, 150, 250)
-	draw.OutlinedRect((size_x - 10) - draw.GetTextSize(watermarkText), 5, size_x - 5, vertical);
-	draw.Color(250, 250, 250, 250);
-	draw.TextShadow((size_x - 8) - draw.GetTextSize(watermarkText), 13, watermarkText);
-	
+	if ct2_watermark:GetValue() == true then
+		draw.SetFont(font_watermark); 
+		draw.Color(10, 10, 10, 150);
+		draw.FilledRect((size_x - 10) - draw.GetTextSize(watermarkText), 5, size_x - 5, vertical );
+		draw.Color(200, 150, 150, 250)
+		draw.OutlinedRect((size_x - 10) - draw.GetTextSize(watermarkText), 5, size_x - 5, vertical);
+		draw.Color(250, 250, 250, 250);
+		draw.TextShadow((size_x - 8) - draw.GetTextSize(watermarkText), 13, watermarkText);
+	end
 end
 callbacks.Register("Draw", watermark_func)
 
 
 --########## INDICATOR ##########
 local function indicator_func()
---[[
+
 	if not ct2_enable:GetValue() then return end
 	if not ct2_indicator:GetValue() then return end
-	
+--[[
 	local local_player = entities.GetLocalPlayer();
 	if local_player == nil or not local_player:IsAlive() then return end
 --]]
@@ -147,14 +148,6 @@ local function indicator_func()
 		draw.TextShadow(10 , indCenterY / 2 + sideextraY , "SILENT");
 		sideextraY = sideextraY + 17
 	end
---[[
-	if gui.GetValue("misc.catware_script.catware_sroll") > 1 and gui.GetValue("rbot.master") == true and gui.GetValue("misc.catware_script.catware_unsafe") == true then
-		draw.SetFont(font_indicator);
-		draw.Color(200, 150, 150, 250)
-		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "ROLL ") -- .. gui.GetValue("misc.catware_script.catware_sroll") .. "º")
-		extraY = extraY + 15
-	end
---]]
 	if ct2_autowall:GetValue() == true and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
@@ -172,26 +165,17 @@ local function indicator_func()
 		draw.Color(200, 150, 150, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY , "BAIM")
 		extraY = extraY + 15
-
 	end
 	if ct2_kpitchdown:GetValue() == true and gui.GetValue("rbot.master") == true then
 		draw.SetFont(font_indicator);
 		draw.Color(200, 150, 150, 250)
-		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH ")
+		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH")
 		extraY = extraY + 15
 	end
---[[
-	local key_fakeduck = gui.GetValue("rbot.antiaim.extra.fakecrouchkey")
-	if input.IsButtonDown(key_fakeduck) and gui.GetValue("rbot.master") == true then
-		draw.SetFont(font_indicator);
-		draw.Color(200, 150, 150, 250)
-		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "FAKEDUCK")
-		extraY = extraY + 15
-	end
---]]
 
 end
 callbacks.Register("Draw", indicator_func)
+
 
 --########## MASTERBOT ##########
 local function masterbot_func()
@@ -209,7 +193,7 @@ callbacks.Register("Draw", masterbot_func)
 --########## AUTOWALL ##########
 local function autowall_func()
 
-	local aw_weapons = {"shared","zeus","pistol","hpistol","smg","rifle","shotgun","scout","asniper","sniper","lmg"}
+	local aw_weapons = {"shared","pistol","hpistol","smg","rifle","shotgun","scout","asniper","sniper","lmg"}
 	
 	if ct2_enable:GetValue() == true then
 		if ct2_autowall:GetValue() then
@@ -287,4 +271,4 @@ local function pitchdown_func()
 		end
 	end
 end
-callbacks.Register("Draw", pitchdown_func) 
+callbacks.Register("Draw", pitchdown_func)
