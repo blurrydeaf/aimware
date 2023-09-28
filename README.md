@@ -16,12 +16,14 @@ Updated lastest  6 September 2023[/b]
 + Switch to Ragebot
 + [s]soon more[/s][/i]
 
-[s]_
-[/s]
+[code]
+[/code]
 
 [b] Download CS-GO [/b]
-🌺 [url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/catware_v1.3.lua] RAW catware v1.3  CS-GO [/url]
+🌺 [url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/catware_v1.3.lua] RAW catware v1.3  CS-GO [/url] [b]Required lua FFI library[/b]
 🌸 [url=https://aimware.net/forum/thread/172048]  Config. SemiRage Roll CS-GO [/url]
+
+[url=https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/catware_v1.3_noFFI.lua] RAW catware noFFI v1.3  CS-GO [/url] [Removed clantag]
 
 [b] Preview CS-GO [/b]
 [img=600x450]https://imageupload.io/ib/iKllqvoiTfBFKz8_1693952862.png[/img]
@@ -35,4 +37,4 @@ Updated lastest  6 September 2023[/b]
 + Switch to Legitbot/Ragebot
 + Clantag and Jumpshot fixed[/i]
 
-[u]Leave +rep on 💗 [url=https://aimware.net/forum/user/61632/reputation/add] my profile [/url] [/u]
+[u]💗 [url=https://aimware.net/forum/user/61632/reputation/add]Leave a +rep on my profile if you enjoy using this script![/url] 💗[/u]
