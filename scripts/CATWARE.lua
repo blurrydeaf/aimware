@@ -36,7 +36,7 @@ local ct2_slider		= gui.Groupbox(ct2_tab, "Slider", 10, 150, 300, 1);
 	local ct2_sfreestand	= gui.Slider(ct2_slider, "sfreestand", "Freestand", 0, 0, 90, 1); 
 	--local ct2_syaw			= gui.Slider(ct2_slider, "syaw", "Anti-Aim Yaw", 0, 0, 60, 1); 
 	local ct2_syjitter		= gui.Slider(ct2_slider, "srangejitter", "Range Jitter", 0, 0, 180, 1); 
-	local ct2_srapidspeed	= gui.Slider(ct2_slider, "srapidspeed", "Rapidfire speed", 0, 0, 20, 1); 
+	--local ct2_srapidspeed	= gui.Slider(ct2_slider, "srapidspeed", "Rapidfire speed", 0, 0, 20, 1); 
 	local ct2_dmgweapons	= gui.Combobox(ct2_slider, "dmgweapons", "Type weapon", "Pistol", "Deagle/R8", "Scout", "Auto", "AWP", "Submachine", "Rifle", "Shotgun", "Negev"); 
 	--local main_mindmg = {"shared","zeus","pistol","hpistol","smg","rifle","shotgun","scout","asniper","sniper","lmg"}
 	local pistol_mindmg		= gui.Slider(ct2_slider, "spistol_mindmg", "Pistol Min. damage", 0, 0, 130, 1); 
@@ -71,8 +71,8 @@ local ct2_keybind 		= gui.Groupbox(ct2_tab, "Bindkeys", 320, 5, 300, 1);
 	local ct2_kfreestand 	= gui.Checkbox(ct2_keybind, "kfreestand", "Freestand", false); 
 	local ct2_kpitchdown 	= gui.Checkbox(ct2_keybind, "kpitchdown", "Pitch down", false);
 		  ct2_kpitchdown:SetDescription("Detectable vac live"); 
-	local ct2_krapidfire	= gui.Checkbox(ct2_keybind, "krapidfire", "Rapidfire", false); 
-	local ct2_kmagicbullet	= gui.Keybox(ct2_keybind, "kmagicbullet", "Magic Bullet", 0);
+	--local ct2_krapidfire	= gui.Checkbox(ct2_keybind, "krapidfire", "Rapidfire", false); 
+	--local ct2_kmagicbullet	= gui.Keybox(ct2_keybind, "kmagicbullet", "Magic Bullet", 0);
 
 
 --##### TAB FEATURE #####
@@ -285,8 +285,8 @@ local function check_unsafe_func()
 		--ct2_kinverter:SetDisabled(false)
 		ct2_kfreestand:SetDisabled(false)
 		ct2_kpitchdown:SetDisabled(false)
-		ct2_krapidfire:SetDisabled(false)
-		ct2_kmagicbullet:SetDisabled(false)
+		--ct2_krapidfire:SetDisabled(false)
+		--ct2_kmagicbullet:SetDisabled(false)
 		ct2_yjitter:SetDisabled(false)
 		
 	else
@@ -297,8 +297,8 @@ local function check_unsafe_func()
 		--ct2_kinverter:SetDisabled(true)
 		ct2_kfreestand:SetDisabled(true)
 		ct2_kpitchdown:SetDisabled(true)
-		ct2_krapidfire:SetDisabled(true)
-		ct2_kmagicbullet:SetDisabled(true)
+		--ct2_krapidfire:SetDisabled(true)
+		--ct2_kmagicbullet:SetDisabled(true)
 		ct2_yjitter:SetDisabled(true)
 	end
 	
@@ -322,12 +322,12 @@ local function unsafe_func()
 			gui.SetValue("rbot.antiaim.condition.autodir.edges", false)
 			gui.SetValue("rbot.antiaim.right", "0 Off")
 			gui.SetValue("rbot.antiaim.left", "0 Off")
-			
+			--[[
 			for i, v in next, unsafe_weapons do
 				gui.SetValue("rbot.accuracy.attack.".. v ..".fire", "Off")
 			end
-			
-			if gui.GetValue("rbot.aim.target.fov") >= 30 then 
+			--]]
+			if gui.GetValue("rbot.aim.target.fov") >= 30 then
 				gui.SetValue("rbot.aim.target.fov", 30)
 			end
 			
@@ -371,8 +371,8 @@ callbacks.Register("Draw", watermark_func)
 --########## INDICATOR ##########
 local function indicator_func()
 
-	if ct2_enable:GetValue() then 
-		if ct2_indicator:GetValue() then
+	--if ct2_enable:GetValue() then 
+		--if ct2_indicator:GetValue() then
 
 --[[
 	local local_player = entities.GetLocalPlayer();
@@ -458,21 +458,21 @@ local function indicator_func()
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "PITCH")
 		extraY = extraY + 13
 	end 
-
+--[[
 	if ct2_krapidfire:GetValue() == true and gui.GetValue("rbot.master") == true and ct2_unsafe:GetValue() == true then
 		draw.SetFont(font_indicator);
 		draw.Color(r, g, b, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "RAPID")
 		extraY = extraY + 13
 	end
+
 	if ct2_kmagicbullet:GetValue() ~= 0 and gui.GetValue("rbot.master") == true and ct2_unsafe:GetValue() == true and input.IsButtonDown(ct2_kmagicbullet:GetValue()) then
 		draw.SetFont(font_indicator);
 		draw.Color(r, g, b, 250)
 		draw.Text(indCenterX / 2 - 25, indCenterY / 2 + extraY, "MAGIC")
 		extraY = extraY + 13
 	end
-		end
-	end
+--]]
 	
 end
 callbacks.Register("Draw", indicator_func)
@@ -592,7 +592,7 @@ end
 callbacks.Register("Draw", pitchdown_func)
 
 
-
+--[[
 --########## RAPIDFIRE ##########
 local function rapidfire_func()
 	
@@ -617,9 +617,9 @@ local function rapidfire_func()
 	
 end
 callbacks.Register("Draw", rapidfire_func)
+--]]
 
-
-
+--[[
 --########## MAGIC BULLET ##########
 local function magicbullet_func()
 	
@@ -638,7 +638,7 @@ local function magicbullet_func()
 	
 end
 callbacks.Register("Draw", magicbullet_func)
-
+--]]
 
 
 --########## YAW JITTER RANDOM ##########
@@ -669,7 +669,6 @@ local function yawjitter_func()
 	
 end
 callbacks.Register("Draw", yawjitter_func)
-
 
 
 --########## ANTI-AIM YAW ##########
@@ -745,6 +744,7 @@ callbacks.Register("Draw", min_damage_func)
 
 
 --########## FORCE UNCHECK ##########
+--[[
 local function antiuntrusted_func()
 	
 	if ct2_enable:GetValue() and ct2_unsafe:GetValue() then
@@ -759,7 +759,7 @@ local function antiuntrusted_func()
 	
 end
 callbacks.Register("Draw", antiuntrusted_func)
-
+--]]
 
 
 --[[
