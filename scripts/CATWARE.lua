@@ -1,6 +1,6 @@
 --[[
 #########################################################
-			Script LUA Aimware v5.1.x CS:2
+			 Script LUA Aimware v5.1.x CS:2
 			Created by blurry and Cl0ne helped
 💗 Leave a +rep on my profile if you enjoy using this script! 💗
 		UID: https://aimware.net/forum/user/61632
