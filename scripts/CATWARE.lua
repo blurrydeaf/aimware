@@ -1,6 +1,6 @@
 --[[
 #########################################################
-			 Script LUA Aimware v5.1.x CS:2
+			Script LUA Aimware v5.1.x CS:2
 			Created by blurry and Cl0ne helped
 💗 Leave a +rep on my profile if you enjoy using this script! 💗
 		UID: https://aimware.net/forum/user/61632
@@ -553,14 +553,14 @@ local function forcebaim_func()
 				gui.SetValue("rbot.hitscan.hitbox.".. v ..".head.priority", 0)
 				gui.SetValue("rbot.hitscan.hitbox.".. v ..".body.priority", 1)
 				--gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.body", 1)
-				gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.forcebody", 1)
+				--gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.forcebody", 1)
 			end
 		else
 			for i, v in next, baim_weapons do
 				gui.SetValue("rbot.hitscan.hitbox.".. v ..".head.priority", 1)
 				gui.SetValue("rbot.hitscan.hitbox.".. v ..".body.priority", 0)
 				--gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.body", 0)
-				gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.forcebody", 0)
+				--gui.SetValue("rbot.hitscan.extra.".. v ..".safepoint.forcebody", 0)
 			end
 			
 		end
@@ -762,22 +762,3 @@ callbacks.Register("Draw", antiuntrusted_func)
 --]]
 
 
---[[
-CHANGELOG
-2.0 +release script support cs2
-2.1 +added 
-2.2 +added rapid-fire bindkey; 
-	random jitter;
-	oneway-weapons slider rapidfirespeed; 
-	custom rgb watermark/indicator;
-	override/min-damage;
-2.3 FUTURE 
-	toggle visual hack legitbot 
-	watermark line top rainbow 
-	custom color darkmode theme
-	yaw AA inverter
-	auto-updater
-	aim-step AA safe
-	dyminac fov min-max + safe max 30 or 40 FOV
-	aspect ratio
---]]
