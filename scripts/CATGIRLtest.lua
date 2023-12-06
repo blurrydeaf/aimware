@@ -15,7 +15,7 @@ local local_version = "1.3"
 local local_script_name = GetScriptName()
 local github_version_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/version_catgirl.txt"
 local github_version = http.Get(github_version_url)
-local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/CATGIRL.lua"
+local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/CATGIRLtest.lua"
 
 if local_version ~= tostring(github_version) then
     print("Now updating " ..local_script_name)
@@ -27,11 +27,6 @@ if local_version ~= tostring(github_version) then
 ---@diagnostic disable-next-line: undefined-global
     UnloadScript(local_script_name)
 end
-
-
-
-
-
 
 
 --########## files saved in local data ##########
