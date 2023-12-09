@@ -79,9 +79,9 @@ if file_found == 14 then
 	
 else
 	print("file missing, downloading")
-	file.Write("theme/bgmenu.png", http.Get("https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/imagens/menu.png")) 			--1
-	file.Write("theme/bgneko.png", http.Get("https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/imagens/me3222ng"))
-	file.Write("theme/bgrias.png", http.Get("https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/imagens/men232ng"))
+	file.Write("theme/bgmenu.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/bgmenu.png?raw=true")) 			--1
+	file.Write("theme/bgneko.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/bgneko.png?raw=true"))
+	file.Write("theme/bgrias.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/bgrias.png?raw=true"))
 	
 	file.Write("theme/sideright.png", http.Get("https://github.com/blurrydeaf/catware.aimware/blob/main/imagens/sideright.png?raw=true"))	--2
 	file.Write("theme/sideright1.png", http.Get("https://github.com/blurrydeaf/catware.aimware/blob/main/imagens/sideright1.png?raw=true"))	--3
@@ -91,9 +91,9 @@ else
 	file.Write("theme/center1.png", http.Get("https://github.com/blurrydeaf/catware.aimware/blob/main/imagens/center1.png?raw=true"))		--7
 	
 	file.Write("theme/bottom.png", http.Get("https://raw.githubusercontent.com/blurrydeaf/catware.aimware/main/imagens/bottom.png"))		--8
-	file.Write("theme/aimwarelogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/png?raw=true"))				--9
-	file.Write("theme/clawlogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagenng?raw=true"))				--10
-	file.Write("theme/catgirllogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/png?raw=true"))				--11
+	file.Write("theme/aimwarelogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/aimwarelogo.png?raw=true"))				--9
+	file.Write("theme/clawlogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/clawlogo.png?raw=true"))				--10
+	file.Write("theme/catgirllogo.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/catgirllogo.png?raw=true"))				--11
 	file.Write("theme/invisible.png", http.Get("https://github.com/blurrydeaf/aimware/blob/main/imagens/invisible.png?raw=true"))			--12
 end
 --#########################
