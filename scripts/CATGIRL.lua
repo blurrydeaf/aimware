@@ -5,15 +5,6 @@ gui.Command("clear")
 💗 Leave a +rep on my profile if you enjoy using this script! 💗
 		UID: https://aimware.net/forum/user/61632
 #########################################################
-
-/drop fps when Enable
-	no inject	 710 fps
-	no script 	 495 fps
-	background 	 470 fps
-	top hold 	 475 fps
- thousand Lover	 315 fps
-
-
 --]]
 
 --##### AUTO UPDATER ##### credit: m0nsterJ
