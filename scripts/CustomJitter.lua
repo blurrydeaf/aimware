@@ -5,8 +5,11 @@
 		UID: https://aimware.net/forum/user/61632
 #########################################################
 --]]
---##### AUTO UPDATER ##### credit: m0nsterJ
-local local_version = "0.3"
+
+
+
+		--##### AUTO UPDATER ##### credit: m0nsterJ
+local local_version = "1.0"
 local name_script = "CustomJitter.lua"
 ---@diagnostic disable-next-line: undefined-global
 local local_script_name = GetScriptName()
@@ -32,210 +35,288 @@ elseif local_version < tostring(github_version) then
 ---@diagnostic disable-next-line: undefined-global
     UnloadScript(local_script_name)
 end
---##### VARIABLE #####
---local player_name = cheat.GetUserName();
-local font = draw.CreateFont("Bahnschrift", 35, 100);
-local preva, x,y = EulerAngles(), 25,450;
---##### REFERENCE #####
+
+
+		--##### REFERENCE #####
 local reference 	= gui.Reference("Ragebot");
 	local tab 			= gui.Tab(reference, "customjitter", "CustomJitter.lua");
-		local aa_base		= gui.Groupbox(tab, "Anti-aim Base", 10, 10, 200, 1);
-			local box_base			= gui.Combobox(aa_base, "box_base", "Type base", "Disable", "Frontjitter", "Backjitter","Sidejitter" ,"Random", "Custom");
-			local speed_box_base	= gui.Combobox(aa_base, "speed_box_base", "Type Speed","Fastest", "Faster", "More fast", "Fast", "Slow" ,"More slow", "Slower","Slowest");
-			--local speed_slider_base		= gui.Slider(aa_base, "speed_slider_base", "Speed", 2, 2, 16, 2);
-			local jitter1_base		= gui.Slider(aa_base, "jitter1_base", "Offset base 1", 1, -180, 180, 1);
-			local jitter2_base		= gui.Slider(aa_base, "jitter2_base", "Offset base 2", 1, -180, 180, 1);
-		local aa_edges				= gui.Groupbox(tab, "Anti-aim Edges ", 220, 10, 200, 1);
-			local box_edges			= gui.Combobox(aa_edges, "box_edges", "Type edges", "Disable", "Edgejitter", "Flick", "Random", "Custom");
-			local speed_box_edges	= gui.Combobox(aa_edges, "speed_box_edges", "Type Speed","Fastest", "Faster", "More fast", "Fast", "Slow" ,"More slow", "Slower","Slowest");
-			--local speed_edges		= gui.Slider(aa_edges, "speed_edges", "Speed", 2, 2, 16, 2);
-			local jitter1_left		= gui.Slider(aa_edges, "jitter1_edges", "Offset left 1", 1, -180, 180, 1);
-			local jitter2_left		= gui.Slider(aa_edges, "jitter2_edges", "Offset left 2", 1, -180, 180, 1);
-			local jitter1_right		= gui.Slider(aa_edges, "jitter1_right", "Offset right 1", 1, -180, 180, 1);
-			local jitter2_right		= gui.Slider(aa_edges, "jitter2_right", "Offset right 2", 1, -180, 180, 1);
-		local aa_pitch				= gui.Groupbox(tab, "Anti-aim Pitch", 430, 10, 200, 1);
-			local box_pitch			= gui.Combobox(aa_pitch, "box_pitch", "Type pitch", "Disable", "Flickup", "Random", "Custom");
-			local speed_box_pitch	= gui.Combobox(aa_pitch, "speed_box_pitch", "Type Speed","Fastest", "Faster", "More fast", "Fast", "Slow" ,"More slow", "Slower","Slowest");
-			--local speed_pitch		= gui.Slider(aa_pitch, "speed_pitch", "Speed", 2, 2, 16, 2);
-			local jitter1_pitch		= gui.Slider(aa_pitch, "jitter1_pitch", "Offset pitch 1", 1, -89, 89, 1);
-			local jitter2_pitch		= gui.Slider(aa_pitch, "jitter2_pitch", "Offset pitch 2", 1, -89, 89, 1);
---##### DRAW FUNC #####
+		local tab_base		= gui.Groupbox(tab, "Anti-aim Base", 10, 10, 200, 1);
+			local base_yaw			= gui.Combobox(tab_base, "base_yaw", "Yaw", "Viewangles", "At target");
+			local base_present		= gui.Combobox(tab_base, "base_present", "Present", "Disable", "Backjitter", "Sidejitter", "Random", "Custom");
+			local base_jitter		= gui.Combobox(tab_base, "base_jitter", "Jitter", "Center");
+			local base_range		= gui.Slider(tab_base, "base_range", "Range", 50, 0, 180, 1);
+			local base_angle		= gui.Slider(tab_base, "base_angle", "Angle", 180, -180, 180, 1);
+			local base_3way			= gui.Checkbox(tab_base, "base_3way", "3-way", false); 
+			if devmode == true then
+				debugmode = gui.Checkbox(tab_base, "debugmode", "Debug mode", true); 
+			end
+		
+		local tab_pitch			= gui.Groupbox(tab, "Anti-aim Pitch", 220, 10, 200, 1);
+			local pitch_present		= gui.Combobox(tab_pitch, "pitch_present", "Present", "Disable", "UpDown", "FlickUp", "Random", "Custom");
+			local pitch_jitter		= gui.Combobox(tab_pitch, "pitch_jitter", "Jitter", "Center");
+			local pitch_range		= gui.Slider(tab_pitch, "pitch_range", "Range", 30, 0, 89, 1);
+			local pitch_angle		= gui.Slider(tab_pitch, "pitch_angle", "Angle", 10, -89, 89, 1);
+		
+		local tab_override		= gui.Groupbox(tab, "Anti-aim Override", 430, 10, 200, 1);
+			local override_right	= gui.Keybox(tab_override, "override_right", "Right", 0);
+			local override_left		= gui.Keybox(tab_override, "override_left", "Left", 0);
+			local override_forward	= gui.Keybox(tab_override, "override_forward", "Forward", 0);
+			local override_back		= gui.Keybox(tab_override, "override_back", "Back", 0);
+			
+			
+		--##### VARIABLE #####
+local font = draw.CreateFont("Verdana", 24, 100); 
+local preva = EulerAngles(); 
+local set_yaw = 180; 
+local override = 0;
+
+
+		--##### DRAW FUNC #####
 local function checker_func()
---[[
-	local box_select = speed_box_base:GetValue()
-	local box_check = (box_select+1)*2
-	local slider_select = speed_slider_base:GetValue()
-	local slider_check = math.floor((slider_select-1)/2)
-	--print("box_select: "..box_select..", slider_select: "..slider_select..", box_check: "..box_check..", slider_check: "..slider_check.."")
-	if slider_select ~= box_check and box_base:GetValue() ~= 5 then
-		--print("not equal")
-		gui.SetValue("rbot.customjitter.speed_slider_base", box_check) --rbot.customjitter.speed_slider_base
-	elseif box_select ~= slider_check then
-		--print("not equal")
-		gui.SetValue("rbot.customjitter.speed_box_base", slider_check) -- rbot.customjitter.speed_box_base
+
+	if base_yaw:GetValue() == 0 then -- Viewangles
+		gui.SetValue("rbot.antiaim.condition.autodir.targets", false);
+	elseif base_yaw:GetValue() == 1 then -- At target
+		gui.SetValue("rbot.antiaim.condition.autodir.targets", true);
 	end
-]]--
-	if box_base:GetValue() ~= 5 then
-		jitter1_base:SetDisabled(true);
-		jitter2_base:SetDisabled(true);
-	else
-		jitter1_base:SetDisabled(false);
-		jitter2_base:SetDisabled(false);
+
+ 	if override_right:GetValue() ~= 0 and input.IsButtonPressed(override_right:GetValue()) then -- override right
+		if override == 1 then
+			override = 0; 
+		else
+			override = 1;
+		end
 	end
-	if box_edges:GetValue() ~= 4 then
-		jitter1_left:SetDisabled(true);
-		jitter2_left:SetDisabled(true);
-		jitter1_right:SetDisabled(true);
-		jitter2_right:SetDisabled(true);
-	else
-		jitter1_left:SetDisabled(false);
-		jitter2_left:SetDisabled(false);
-		jitter1_right:SetDisabled(false);
-		jitter2_right:SetDisabled(false);
+	if override_left:GetValue() ~= 0 and input.IsButtonPressed(override_left:GetValue()) then -- override left
+		if override == 2 then
+			override = 0; 
+		else
+			override = 2;
+		end
 	end
-	if box_pitch:GetValue() ~= 3 then
-		jitter1_pitch:SetDisabled(true);
-		jitter2_pitch:SetDisabled(true);
-	else
-		jitter1_pitch:SetDisabled(false);
-		jitter2_pitch:SetDisabled(false);
+	if override_forward:GetValue() ~= 0 and input.IsButtonPressed(override_forward:GetValue()) then -- override forward
+		if override == 3 then
+			override = 0; 
+		else
+			override = 3;
+		end
 	end
+	if override_back:GetValue() ~= 0 and input.IsButtonPressed(override_back:GetValue()) then -- override back
+		if override == 4 then
+			override = 0; 
+		else
+			override = 4;
+		end
+	end
+
 end
---##### PRE CREATEMOVE #####
+
+
+		--##### PRE CREATEMOVE #####
 local function preva_func(cmd)
 	preva = cmd:GetViewAngles();
 end
---##### ANTIAIM BASE #####
+
+
+		--##### ANTIAIM BASE #####
 local function antiaim_base()
-	local box_select = (speed_box_base:GetValue()+1)*2;
-	local box_check = box_select/2;
-	local tickcount_base = globals.TickCount() %box_select;
-	--print("box_select: "..box_select.. " box_check: "..box_check.." tickcount_base: "..tickcount_base.."")
-	if box_base:GetValue() == 0 then return -- Disable
-	elseif box_base:GetValue() == 1 then -- Frontjitter
-		if box_check <= tickcount_base then
-			base = 60; else base = -60;
-		end
-	elseif box_base:GetValue() == 2 then -- Backjitter
-		if box_check <= tickcount_base then
-			base = 140 else base = -140;
-		end
-	elseif box_base:GetValue() == 3 then -- Sidejitter
-		if box_check <= tickcount_base then
-			base = 100; else base = -100;
-		end
-	elseif box_base:GetValue() == 4 then -- Random
-		base = math.random(-180,180);
-	elseif box_base:GetValue() == 5 then -- Custom
-		if box_check <= tickcount_base then
-			base = jitter1_base:GetValue(); else base = jitter2_base:GetValue();
-		end
-	end
-	gui.SetValue("rbot.antiaim.base",""..base.." Backward"); -- rbot.antiaim.base
-	--print("base: " ..tostring(base).. ""); --debug
-end
---##### ANTIAIM EDGES #####
-local function antiaim_edges()
-	local box_select = (speed_box_edges:GetValue()+1)*2;
-	local box_check = box_select/2;
-	local tickcount_edges = globals.TickCount() %box_select;
-	if box_edges:GetValue() >= 1 then
-		gui.SetValue("rbot.antiaim.condition.autodir.edges", true)
-	end
-	if box_edges:GetValue() == 0 then return  -- Disable
-	elseif box_edges:GetValue() == 1 then -- Edgesjitter
-		if box_check <= tickcount_edges then
-			left = 15; 
-			right = -15; 
-		else
-			left = 165; 
-			right = -165; 
-		end
-	elseif box_edges:GetValue() == 2 then -- Flick
-		local flick = globals.TickCount()%16
-		if flick >= 14 then
-			left = -90; 
-			right = 90;
-		else
-			left = 90; 
-			right = -90;
-		end
-	elseif box_edges:GetValue() == 3 then -- Random
-		left = math.random(-180,180);
-		right = math.random(-180,180);
-	elseif box_edges:GetValue() == 4 then -- Custom
-		if box_check <= tickcount_edges then
-			left = jitter1_left:GetValue(); 
-			right = jitter1_right:GetValue(); 
-		else 
-			left = jitter2_left:GetValue();
-			right = jitter2_right:GetValue(); 
-		end
-	end
-	gui.SetValue("rbot.antiaim.left", ""..left.." Backward")
-	gui.SetValue("rbot.antiaim.right",""..right.." Backward")
-	--print("edges: " ..tostring(edges).. "") --debug
-end
---##### ANTIAIM PITCH #####
-local function antiaim_pitch(cmd)
-	local box_select = (speed_box_edges:GetValue()+1)*2;
-	local box_check = box_select/2;
-	local tickcount_pitch = globals.TickCount() %box_select;
+
+	if override == 0 then
 	
+		if base_present:GetValue() == 1 then -- Backjitter
+			
+			if base_3way:GetValue() then
+				if globals.TickCount()%4 == 0 then
+					set_yaw = -140; 
+				elseif globals.TickCount()%4 == 2 then
+					set_yaw = 140; 
+				else
+					set_yaw = -180; 
+				end
+			else
+				if globals.TickCount()%2 == 0 then
+					set_yaw = -140; 
+				else 
+					set_yaw = 140;
+				end
+			end
+			
+		elseif base_present:GetValue() == 2 then -- Sidejitter
+		
+			if base_3way:GetValue() then
+				if globals.TickCount()%4 == 0 then
+					set_yaw = -100; 
+				elseif globals.TickCount()%4 == 2 then
+					set_yaw = 100; 
+				else
+					set_yaw = -180; 
+				end
+			else
+				if globals.TickCount()%2 == 0 then
+					set_yaw = -110; 
+				else 
+					set_yaw = 110;
+				end
+			end
+			
+		elseif base_present:GetValue() == 3 then -- Random
+		
+			if globals.TickCount()%2 == 0 then
+				set_yaw = math.random(-180,0); 
+			else 
+				set_yaw = math.random(0,180);
+			end
+			
+		elseif base_present:GetValue() == 4 then -- Custom
+		
+			if base_jitter:GetValue() == 0 then -- Center
+			
+				if base_3way:GetValue() then
+				
+					if globals.TickCount()%4 == 0 then
+						set_yaw = base_angle:GetValue() - base_range:GetValue();  
+					elseif globals.TickCount()%4 == 2 then
+						set_yaw = base_angle:GetValue() + base_range:GetValue();
+					else
+						set_yaw = base_angle:GetValue(); 
+					end
+					
+				else
+				
+					if globals.TickCount()%2 == 0 then
+						set_yaw = base_angle:GetValue() - base_range:GetValue(); 
+					else 
+						set_yaw = base_angle:GetValue() + base_range:GetValue();
+					end
+					
+				end
+			end
+		end
+		
+	elseif override == 1 then
+		set_yaw = -90;
+	elseif override == 2 then
+		set_yaw = 90;
+	elseif override == 3 then
+		set_yaw = 0;
+	elseif override == 4 then
+		set_yaw = -180;
+	end
+
+	if set_yaw > 180 then
+		set_yaw = set_yaw - 360;
+	elseif set_yaw < -180 then
+		set_yaw = set_yaw + 360;
+	elseif set_yaw == 0 then -- Fix bug antiaim pitch
+		set_yaw = set_yaw + 1
+	end
+	
+	gui.SetValue("rbot.antiaim.base", set_yaw.." Backward");
+	--print("set_yaw: " ..tostring(set_yaw)); --Debug
+	
+end
+
+
+		--##### ANTIAIM PITCH #####
+local function antiaim_pitch(cmd)
+
 	local va = cmd:GetViewAngles();
+	
 	if va.x == preva.x and va.y == preva.y then return end
-	if box_pitch:GetValue() == 0 then return -- Disable
-	elseif box_pitch:GetValue() == 1 then -- Flick
-		local flick = globals.TickCount()%16
-		if flick >= 14 then
-			va.x = -89; else va.x = 89; 
+	
+	if pitch_present:GetValue() == 0 then return -- Disable
+	
+	elseif pitch_present:GetValue() == 1 then -- UpDown
+	
+		if globals.TickCount()%2 == 0 then
+			va.x = -89; 
+		else 
+			va.x = 89; 
 		end
-	elseif box_pitch:GetValue() == 2 then -- Random
-		va.x = math.random(-89,89);
-	elseif box_pitch:GetValue() == 3 then -- Custom
-		if box_check <= tickcount_pitch then
-			va.x = jitter1_pitch:GetValue(); else va.x = jitter2_pitch:GetValue();
+		
+	elseif pitch_present:GetValue() == 2 then -- FlickUp
+		
+		if globals.TickCount()%64 == 0 then
+			va.x = -89; 
+		else 
+			va.x = 89; 
 		end
+		
+	elseif pitch_present:GetValue() == 3 then -- Random
+	
+		if globals.TickCount()%2 == 0 then
+			va.x = math.random(-89,0); 
+		else
+			va.x = math.random(0,89);
+		end
+		
+	elseif pitch_present:GetValue() == 4 then -- Custom
+	
+		if globals.TickCount()%2 == 0 then
+			va.x = pitch_angle:GetValue() - pitch_range:GetValue(); 
+		else 
+			va.x = pitch_angle:GetValue() + pitch_range:GetValue();
+		end
+		
 	end
+	
+	if va.x > 89 then
+		va.x = va.x - 45;
+	elseif va.x < -89 then
+		va.x = va.x + 45;
+	end
+	
 	cmd:SetViewAngles(va)
-	--print("pitch: " ..tostring(va.x).. "") --debug
+	--print("pitch: " ..tostring(va.x)) --Debug
+	
 end
---##### DEV MODE #####
+
+
+		--##### DEV MODE #####
 local function devmode_func()
-	if devmode == true then
-	local box_select = (speed_box_base:GetValue()+1)*2;
-	local box_check = box_select/2;
-	local tickcount = globals.TickCount();
-	local tickcount_select = globals.TickCount() %box_select;
-		local time = math.floor(common.Time());
-		local curtime = math.floor(globals.CurTime());
-		local absoluteframetime = math.floor(globals.AbsoluteFrameTime()*10000)/10;
-		local framerate = math.floor(1/globals.AbsoluteFrameTime());
-	draw.SetFont(font);
-	draw.Color(255, 50, 50, 255);
-	draw.TextShadow(x, y+25, "box_select: " ..tostring(box_select).. "");
-	draw.TextShadow(x, y+50, "box_check: " ..tostring(box_check).. "");
-	draw.TextShadow(x, y+75, "tickcount: " ..tostring(tickcount).. "");
-	draw.TextShadow(x, y+100, "tickcount_select: " ..tostring(tickcount_select).. "");
-	draw.TextShadow(x, y+125, "time: " ..tostring(time).. "");
-	draw.TextShadow(x, y+150, "curtime: " ..tostring(curtime).. "");
-	draw.TextShadow(x, y+175, "absoluteframetime: " ..tostring(absoluteframetime).. " ms");
-	draw.TextShadow(x, y+200, "framerate: " ..tostring(framerate).. " FPS");
+	
+	if devmode == true and debugmode:GetValue() then 
+		
+		draw.SetFont(font); draw.Color(70, 250, 20, 255); local screen_x, screen_y = 25, 450;
+		draw.TextShadow(screen_x, screen_y, "globalsTickCount: " ..tostring(globals.TickCount()).. ""); screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "globalsFrameCount: " ..tostring(globals.FrameCount()).. ""); screen_y = screen_y + 25;
+		--print("TickCount: "..tostring(globals.TickCount()%64).. " | FrameCount: " ..tostring(globals.FrameCount()%1000).. " "); --Debug
+		
+		screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "globalsRealTime: " ..tostring(math.floor(globals.RealTime())).. ""); screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "globalsCurTime: " ..tostring(math.floor(globals.CurTime())).. "");screen_y = screen_y + 25;
+		
+		--screen_y = screen_y + 25;
+		--draw.TextShadow(screen_x, screen_y, "globalsFrameTime: " ..tostring(globals.FrameTime()).. ""); screen_y = screen_y + 25;
+		--draw.TextShadow(screen_x, screen_y, "globalsAbsoluteFrameTime: " ..tostring(globals.AbsoluteFrameTime()).. "");screen_y = screen_y + 25;
+		
+		screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "millisecond: " ..tostring(math.floor(common.Time()*1000)).. " ");screen_y = screen_y + 25
+		draw.TextShadow(screen_x, screen_y, "second: " ..tostring(math.floor(common.Time())).. " ");screen_y = screen_y + 25
+		
+		screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "Frametime: " ..tostring(math.floor((globals.FrameTime()*10000/10)+0.5)).. " ms");screen_y = screen_y + 25;
+		draw.TextShadow(screen_x, screen_y, "FPS: " ..tostring(math.floor(1/globals.AbsoluteFrameTime())));screen_y = screen_y + 25;
+		
 	end
 end
+
+
 --##### CALL BACKS #####
 callbacks.Register("Draw", function()
 	checker_func()
 	devmode_func()
 end)
+
 callbacks.Register("CreateMove", function(cmd)
 	antiaim_base()
-	antiaim_edges()
 	antiaim_pitch(cmd)
 end)
+
 callbacks.Register("PreMove", function(cmd)
 	preva_func(cmd)
 end)
+
 callbacks.Register("Unload", function()
     gui.SetValue("rbot.antiaim.base", "0 Off");
 	gui.SetValue("rbot.antiaim.left", "0 Off");
@@ -244,23 +325,40 @@ callbacks.Register("Unload", function()
 	gui.SetValue("rbot.antiaim.advanced.pitch", 0);
 	gui.Command("clear");
 end)
+
+
+
 --[[
 CHANGELOG
 v0.1 +added jitter yaw; 
 	 +added jitter pitch;
 	 +added auto-updater; 
-	 +fixed antiaim suck
+	 +fixed bug minor antiaim
 v0.2 +added aa edges and right;
 	 +added jitter random and custom 
 	 +Improved menu gui
 v0.3 +added GUI esay settings for new players, 
 	 +added new AA builders(Forjitter, backjitter, sidejitter, edegesjitter and flick), 
-	 +added new selection box fastest to slowest
+	 +added new selection speed box fastest to slowest
 	 -removed sliders speed aa base, edges and pitch
 	 +Improve AA edges(left and right).
-
+v1.0
+	+Added override antiaim
+	+Added jitter 3-WAY
+	+Remake code jitter, custom, pitch, etc
+	+Remake menu GUI
+	+Removed AA edges
+	+Removed presents forjitter, edgejitters and flicks
+	+Removed custom tickbase
+	+Removed selections fastest to slowest
+	+Fixed bug yaw 0ºdegree
+	+Optimized code
+	
 ---SOON
- 3 angles loop example -90 > 180(back) or 0(front) > 90
- better code optimized and short code
+cache backup config.+ unload back to cache orignal
  new aa build pitch ~45
+cs2 limit angle move 102º per 4 tick ?
+jtter offet
+pitch 3way
+
 --]]
