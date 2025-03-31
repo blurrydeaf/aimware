@@ -14,14 +14,14 @@
 --- AUTO UPDATE --- 
 --- AUTO UPDATE ---
 -- Version tracking
-local major,minor,patch = 3,14,5  -- script version
-local local_version = string.format("%d.%d.%d", major, minor)
+local major,minor,patch = 3,14,8  -- script version
+local local_version = string.format("%d.%d", major, minor)
 
 local name_script = GetScriptName() -- name file
 local name_tag = " [".. name_script .."] "
 
 local github_version_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/version_catware.txt" -- version
-local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/old/CATWARE_v2.3.lua" -- script
+local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/Catware.lua" -- script
 local devmode = false -- set to false for public releases
 local cloud_version = http.Get(github_version_url) -- Fetch info
 
@@ -48,7 +48,7 @@ elseif local_version ~= cloud_version then
         print(name_tag .."Update failed")
     end
 end
-
+print(name_tag .."Loaded script... ".. name_script)
 
 
 --- REFERENCE --- 
@@ -97,15 +97,15 @@ local messages = {
     "⚠️ Disable Complete Anti-Untrusted!\n\n\nRequired for Force Anti-Spread to work properly.",
     "⚙️ Optimize your settings!\n\n\nAdjust smoothness and FOV for the best performance.",
     "🔥 Use dynamic spread control!\n\n\nIt adapts to your weapon for maximum accuracy.",
-    "🎮 Join the Claware community!\n\n\nGet exclusive tips and tricks from top players.",
+    "🎮 Join the Catware community!\n\n\nGet exclusive tips and tricks from top players.",
     "💡 Experiment with weapon settings!\n\n\nFind the perfect configuration for each gun.",
-    "🌟 Claware is constantly updated!\n\n\nStay tuned for new features and improvements.",
-    "🚀 Customize your experience!\n\n\nTailor Claware to fit your playstyle.",
+    "🌟 Catware is constantly updated!\n\n\nStay tuned for new features and improvements.",
+    "🚀 Customize your experience!\n\n\nTailor Catware to fit your playstyle.",
     "🛡️ Safemode helps avoid VAC Live bans!\n\n\nIt reduces the risk of cooldowns and bans.",
     "🎯 Default hitbox means no enemy on crosshair!\n\n\nAdjust hitbox settings for better targeting.",
     "🌀 Oscillation aim reduces cooldown risk!\n\n\nIt’s less detectable and more natural.",
     "🔫 Customize weapon groups!\n\n\nSet hitbox and smooth aim for each weapon type.",
-    "❤️ Enjoying script Claware.lua?\n\n\nDon’t forget to +rep my profile! 😊"
+    "❤️ Enjoying script Catware.lua?\n\n\nDon’t forget to +rep my profile! 😊"
 }
 
 local function get_message()
@@ -549,7 +549,7 @@ client.AllowListener("game_end")
 
 -- Clean up on unload
 callbacks.Register("Unload", function()
-    print(name_tag.."Unloading script...")
+    print(name_tag.."Unloading script...".. name_script)
 end)
 
 
