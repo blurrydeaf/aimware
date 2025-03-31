@@ -8,7 +8,7 @@ gui.Command("clear")
 --]]
 
 --##### AUTO UPDATER ##### credit: m0nsterJ
---local local_version = "1.31" --dev ver
+--local local_version = "1.31" --dev ver 
 local local_version = "1.31"
 local name_script = "CATGIRL.lua"
 ---@diagnostic disable-next-line: undefined-global

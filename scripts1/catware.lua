@@ -13,7 +13,7 @@
 --- AUTO UPDATE ---
 --- AUTO UPDATE --- 
 --- AUTO UPDATE ---
--- Version tracking
+-- Version tracking 
 local major,minor,patch = 3,14,8  -- script version
 local local_version = string.format("%d.%d", major, minor)
 

@@ -8,7 +8,7 @@
 
 
 
-		--##### AUTO UPDATER ##### credit: m0nsterJ
+	--##### AUTO UPDATER ##### credit: m0nsterJ
 local local_version = "1.0"
 local name_script = "CustomJitter.lua"
 ---@diagnostic disable-next-line: undefined-global
