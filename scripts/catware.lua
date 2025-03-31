@@ -21,7 +21,7 @@ local name_script = GetScriptName() -- name file
 local name_tag = " [".. name_script .."] "
 
 local github_version_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/version_catware.txt" -- version
-local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/Catware.lua" -- script
+local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/catware.lua" -- script
 local devmode = false -- set to false for public releases
 local cloud_version = http.Get(github_version_url) -- Fetch info
 

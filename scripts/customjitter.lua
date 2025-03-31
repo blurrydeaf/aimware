@@ -15,7 +15,7 @@ local name_script = "CustomJitter.lua"
 local local_script_name = GetScriptName()
 local github_version_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/version_customjitter.txt"
 local github_version = http.Get(github_version_url)
-local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/CustomJitter.lua"
+local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/refs/heads/main/scripts/customjitter.lua"
 local devmode = false
 if "nil" == tostring(github_version) then 
 	print("Enable LUA permission 'Allow internet connections...'")
