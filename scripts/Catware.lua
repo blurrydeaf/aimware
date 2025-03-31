@@ -557,7 +557,7 @@ end)
 --[[
 CHANGELOG
 3.x.x
-	Remake full script
+	Remake full code
 	Added SafeMode BETA
 	Added AutoUpdater
 	Added Config. override
@@ -570,7 +570,8 @@ CHANGELOG
 	Added Presents Hitbox
 	Added Presents Prefer target.
 	Added Messages(Tips and ticks)
-	Fixed bugs/brokens/invalids/loops/erros
+	Fixed bugs/brokens/invalids/
+	Fixed Crashed and Error Loops
 	Improved code optimization
 FUTURE
 	add count force anti spread
