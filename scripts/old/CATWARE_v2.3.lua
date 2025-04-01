@@ -16,24 +16,7 @@ local github_version_url = "https://raw.githubusercontent.com/blurrydeaf/aimware
 local github_version = http.Get(github_version_url)
 local github_source_url = "https://raw.githubusercontent.com/blurrydeaf/aimware/main/scripts/CATWARE.lua"
 local devmode = false
-if "nil" == tostring(github_version) then 
-	print("Enable LUA permission 'Allow internet connections...'")
-elseif local_version > tostring(github_version) then --dev mode
-	gui.Command("clear")
-	print("*** ENABLE  DEVMODE ***")
-	print(""..name_script.." local v" ..local_version.. "; cloud v" .. tostring(github_version) .. "")
-	devmode = true
-elseif local_version < tostring(github_version) then
-	print("your version outdated")
-	print("Now updating " ..local_script_name)
-    file.Delete(local_script_name)
-    print("Successfully deleted old version of " ..local_script_name)
-    file.Write(local_script_name, http.Get(github_source_url))
-    local_version = github_version
-    print("Successfully updated " ..local_script_name)
----@diagnostic disable-next-line: undefined-global
-    UnloadScript(local_script_name)
-end
+
 
 --##### DPI #####
 local dpi = 1
