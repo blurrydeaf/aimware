@@ -25,18 +25,18 @@ local sm_window = gui.Window("sm_window", "Restrictions Mode", win_width/7, win_
 local sm_group = gui.Groupbox(sm_window, "Features", win_margem_w, win_margem_h);
   local sm_enable = gui.Checkbox(sm_group, "sm_enable", "Enable script", true);
   local sm_maxfov = gui.Slider(sm_group, "sm_maxfov", "Maximum FOV", 2.0, 0.1, 10.0, 0.1);
-  local sm_minsmooth = gui.Slider(sm_group, "sm_minsmooth", "Minimum smooth", 15.0, 0.25, 20.0, 0.25);
+  local sm_minsmooth = gui.Slider(sm_group, "sm_minsmooth", "Minimum smooth", 10.0, 0.25, 20.0, 0.25);
   local sm_randomize = gui.Slider(sm_group, "sm_randomize", "Minimum randomize", 1.5, 0.1, 10.0, 0.1);
   local sm_curve = gui.Slider(sm_group, "sm_curve", "Minimum curve", 0.3, 0.05, 2.0, 0.05);
   local sm_method	= gui.Combobox(sm_group, "sm_method", "Smooth method", "Dynamic", "Static", "Disable");
   local sm_autowall = gui.Checkbox(sm_group, "sm_autowall", "Penetrable wall", false);
   local sm_antistricky = gui.Checkbox(sm_group, "sm_nonsticky", "Anti-Stricky", true);
-  local sm_targetswitch = gui.Slider(sm_group, "sm_targetswitch", "Minimum Target Switch", 330, 10, 1000, 10);
-  local sm_firstshot = gui.Slider(sm_group, "sm_firstshot", "Minimum First Shot", 60, 10, 1000, 10);
+  local sm_targetswitch = gui.Slider(sm_group, "sm_targetswitch", "Minimum Target Switch", 300, 10, 1000, 10);
+  local sm_firstshot = gui.Slider(sm_group, "sm_firstshot", "Minimum First Shot", 60, 10, 500, 10);
   local sm_recoil = gui.Slider(sm_group, "sm_recoil", "Limit recoil", 80, 1, 100, 1);
   local sm_trig_random = gui.Checkbox(sm_group, "sm_trig_random", "Random delay", true);
-  local sm_trigger_min = gui.Slider(sm_group, "sm_maxfov", "Minimum delay", 30, 5, 500, 5);
-  local sm_trigger_range = gui.Slider(sm_group, "sm_trigger_max", "Range delay", 70, 5, 500, 5);
+  local sm_trigger_min = gui.Slider(sm_group, "sm_maxfov", "Minimum delay", 30, 5, 100, 5);
+  local sm_trigger_range = gui.Slider(sm_group, "sm_trigger_max", "Range delay", 20, 0, 100, 5);
   local sm_autofire = gui.Checkbox(sm_group, "sm_autofire", "Automatic fire", false);
   local sm_antispread = gui.Checkbox(sm_group, "sm_antispread", "Remove spread", false);
   local sm_autostrafe = gui.Checkbox(sm_group, "sm_autostrafe", "Strafe Bhop", false);
@@ -98,7 +98,7 @@ callbacks.Register("FireGameEvent", function(event)
 			for i, v in next, group_weapons do
 				gui.SetValue("lbot.trg.weapon.".. v ..".delay", time_delay);
 			end
-			print("time delay: "..time_delay )
+			print("[Triggerbot] Current delay: " .. time_delay .. " ms")
         end
     end
 end)
@@ -194,8 +194,8 @@ v1.1
 	*Added target switch + first shot delay
 	*Fixed smooth method
 	*Triggerbot random delay
-	Improved postion window
-	
+	*Improved postion window
+	*Changed small settings
 v1.2 - future
 	*Count kills soon issue bug crash
 	*Cooldown per kill
