@@ -1,9 +1,6 @@
 
 		--##### REFERENCE #####
 local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
-	--local pitch_present		= gui.Combobox(tab_antiaim, "pitch_present", "Present Pitch AA", "Disable", "Pitch Up", "Fake Pitch", "Custom");
-	--local pitch_slider 		= gui.Slider(tab_antiaim, "pitch_slider", "Custom pitch", 0, -200, 200, 1);
-
 	local override_right	= gui.Keybox(tab_antiaim, "override_right", "Manual Right", 0);
 	local override_left		= gui.Keybox(tab_antiaim, "override_left", "Manual Left", 0);
 	local override_forward	= gui.Keybox(tab_antiaim, "override_forward", "Manual Forward", 0);
@@ -11,12 +8,6 @@ local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
 		--##### VARIABLE #####
 local override = 0;
 local pre_va = EulerAngles(); 
-local fake_pitch = -3402823346297399750336966557696	--EXPLOIT PITCH FAKE "-3402823346297399750336966557696"
-local pitch_up = -179.0
-
-local X, Y = input.GetMousePos();
-local delta = input.GetMouseWheelDelta();
---print("mouse x: ".. X ..", y: ".. Y .." delta: ".. delta)
 
 		--##### PRE CREATEMOVE #####
 local function preva_func(cmd)
@@ -84,32 +75,6 @@ local function antiaim_base(cmd)
 	end
 end
 
---[[
-	--##### ANTIAIM PITCH #####
-local function antiaim_pitch(cmd)
-	local va_pitch = cmd:GetViewAngles();
-	
-	if va_pitch.x == pre_va.x and va_pitch.y == pre_va.y then 
-		return 
-	end
-	
-	if pitch_present:GetValue() == 0 then  -- Disable
-		return
-	elseif pitch_present:GetValue() == 1 then -- Pitch Up
-		va_pitch.x = pitch_up;
-	elseif pitch_present:GetValue() == 2 then -- Fake Pitch
-		va_pitch.x = fake_pitch; 
-	else
-		va_pitch.x = pitch_slider:GetValue();
-	end
-	
-	if antiaim then
-		cmd:SetViewAngles(va_pitch)
-		--print("pitch: " ..tostring(va_pitch.x)) --Debug pitch
-	end
-end
---]]
-
 callbacks.Register("Draw", function()
 	checker_func();
 end)
@@ -118,25 +83,4 @@ callbacks.Register("PreMove", function(cmd)
 end)
 callbacks.Register("CreateMove", function(cmd)
 	antiaim_base(cmd);
-	--antiaim_pitch(cmd)
 end)
-
---[[
-	##### CHANGELOG #####
-v0.1 (Initial Release)
-	+ Added manual override system
-	+ Right (-89), Left (+89), Forward (179)
-	+ Toggle-on/toggle-off keybinds
-	+ Auto-cleanup on unload
-v0.2
-	+Fixed anti aim angle incorrect
-	+Added auto direction target
-	+Added anti angle invalid
-	+Improved logic code anti aim
-v0.x Planned
-	+Add anti aim pitch
-	+Add anti aim yaw: jitter and spin
-	+Add indicator override
-	+Fix bhopping with aa override
-	... more
---]]
