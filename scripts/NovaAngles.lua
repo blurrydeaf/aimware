@@ -9,19 +9,19 @@
 
 		--##### REFERENCE #####
 local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
-	local yaw_present		= gui.Combobox(tab_antiaim, "yaw_present", "Present Yaw: ", "Disabled ", "Custom Yaw ", "Spinbot ", "Jitter ", "Random ", "Moonwalk ");
-	local yaw_offset 		= gui.Slider(tab_antiaim, "yaw_offset", "Custom yaw", 180, -180, 180, 0.1);
-	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spinbot Speed", -5, -45, 45, 0.1);
-	local yaw_jitter_range	= gui.Slider(tab_antiaim, "yaw_jitter_range", "Jitter Range ", 30, 0, 90);
-	local yaw_jitter_tick	= gui.Slider(tab_antiaim, "yaw_jitter_tick", "Speed", 4, 2, 32, 2);
+	local yaw_present		= gui.Combobox(tab_antiaim, "yaw_present", "Yaw Presets", "Disabled ", "Custom Yaw", "Spinbot ", "Jitter ", "Random ", "Moonwalk ");
+	local yaw_offset 		= gui.Slider(tab_antiaim, "yaw_offset", "Yaw Offset", 180, -180, 180, 0.1);
+	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spin Speed", -5, -45, 45, 0.1);
+	local yaw_jitter_range	= gui.Slider(tab_antiaim, "yaw_jitter_range", "Jitter Range", 30, 0, 90);
+	local yaw_jitter_tick	= gui.Slider(tab_antiaim, "yaw_jitter_tick", "Jitter Speed", 4, 2, 32, 2);
 
 	--local pitch_present		= gui.Combobox(tab_pitch, "pitch_present", "Present", "Disable", "UpDown", "FlickUp", "Random", "Custom");
-	local pitch_present		= gui.Combobox(tab_antiaim, "pitch_present", "Present Pitch", "Disabled", "Jitter Pitch", "Fake Pitch", "Fake Jitter", "YES!", "Custom Pitch");
-	local pitch_slider 		= gui.Slider(tab_antiaim, "pitch_slider", "Custom pitch", -50, -89, 89, 0.1);
+	local pitch_present		= gui.Combobox(tab_antiaim, "pitch_present", "Pitch Presets", "Disabled", "Jitter Pitch", "Fake Pitch", "Fake Jitter", "Nod", "Custom Pitch");
+	local pitch_slider 		= gui.Slider(tab_antiaim, "pitch_slider", "Pitch Offset", -50, -89, 89, 0.1);
 	
 	--local roll_enable 		= gui.Checkbox(tab_antiaim, "roll_enable", "Enable Roll Angle", false);
-	local roll_present		= gui.Combobox(tab_antiaim, "roll_present", "Present Roll", "Disabled", "Wave Camera", "Spin Camera", "Upside Down Camera", "Custom Roll");
-	local roll_slider		= gui.Slider(tab_antiaim, "roll_slider", "Custom roll", 0, -45, 45, 0.1);
+	local roll_present		= gui.Combobox(tab_antiaim, "roll_present", "Roll Presets", "Disabled", "Wave Camera", "Spin Camera", "Upside-Down Camera", "Custom Roll");
+	local roll_slider		= gui.Slider(tab_antiaim, "roll_slider", "Roll Offset", 0, -45, 45, 0.1);
 	--local roll_speed 		= gui.Slider(tab_antiaim, "roll_speed", "Roll Speed", 0, 0, 15, 1);
 	--local roll_range 		= gui.Slider(tab_antiaim, "roll_range", "Roll Range", 0, 0, 360, 1);
 	
@@ -345,6 +345,7 @@ v1.0
     # Fixed bhopping with AA (target selection not supported due to API limitations)
     # Fixed incorrect spinbot behavior
     # Fixed spin infinite loop exceeding 180 degrees
+	# Fixed override incorrect and broken behavior
     # Fixed bugs, crashes, errors, and loop issues
     * Improved system toggle keys (shorter)
     * Improved spin angles based on tick
@@ -361,4 +362,8 @@ v1.0
     + Need more ideas? DM me on Discord: blurry33
     + ... more
 
+	add anti hideshorts shot invisible.
+	theory anti aim back positon enemy exaclty and same time shot per one tick.
+
+	pitch fix per tick
 --]]
