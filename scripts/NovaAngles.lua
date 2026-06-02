@@ -57,7 +57,7 @@ end
 local function aa_base(cmd)
 
 	local antiaim = gui.GetValue("rbot.antiaim.enabled");
-	local ad_target = gui.GetValue("rbot.antiaim.autodir.targets");
+	local ad_target = gui.GetValue("rbot.antiaim.yaw", 1); -- rbot.antiaim.yaw "Target Based" (1 select)
 	local tick = globals.TickCount();
 	local jitter_tick = yaw_jitter_tick:GetValue()
 	local va = cmd:GetViewAngles();
@@ -83,7 +83,7 @@ local function aa_base(cmd)
 
 		va.y = yaw_base + (tick * sp_speed) % 360 ;
 
-		-- 1st test
+		-- 1st test 
 		--yaw_base = yaw_base + (tick % 360);
 		--va.y = yaw_base + sp_speed;-- infinite ?
 
@@ -159,13 +159,13 @@ local function aa_base(cmd)
 	if movetype == 9 then
 		--print("on ladder ")
 		return -- on ladder
-	elseif gui.GetValue("rbot.antiaim.use") and bit.band(buttons, on_use) ~= 0  then
+	elseif bit.band(buttons, on_use) ~= 0  then
 		--print("on use ")
 		return -- on use
-	elseif gui.GetValue("rbot.antiaim.knife") and weaponType == 0 then 
+	elseif weaponType == 0 then 
 		--print("use knife")
 		return -- on knife
-	elseif gui.GetValue("rbot.antiaim.grenade") and weaponType == 9 then 
+	elseif weaponType == 9 then 
 		--print("on grenade")
 		return -- on grenade
 	end
@@ -308,62 +308,3 @@ callbacks.Register("Unload", function()
 	--gui.Command("clear");
 end)
 
-
---[[
-##### CHANGELOG #####
-
-v0.1 (Initial Release)
-    + Added manual override system
-    + Right (-89), Left (+89), Forward (179) angles
-    + Toggle on/off keybinds
-    + Auto-cleanup on unload
-
-v0.2
-    + Fixed anti-aim incorrect angles
-    + Added auto direction targeting
-    + Added anti-invalid angle clamping
-    + Improved anti-aim logic code
-
-v1.0
-    + Added anti-aim Yaw, Pitch, and Roll
-    + Added preset angle types
-    + Added Custom Yaw, Yaw Jitter, Spinbot, Random, Moonwalk (does not work on Valve servers)
-    + Added Custom Pitch, Jitter Pitch, Fake Pitch (patched?), Aggressive
-    + Added Custom Roll, Wave Camera, Spinning Camera, Upside Down Camera
-    + Added debug mode + visual indicator
-    + Added override indicator
-    + Added anti-invalid angles protection
-    + Added shot/fire (IN_ATTACK) force disable AA
-    + Added Yaw Jitter range, base yaw, and tickbase-based speed
-    + Added tickbase-based spin speed
-    + Added AA disable conditions: on use, on knife, on grenades
-    + Added debug mode (info prints) for developers
-    + Added AA disable on ladder (not perfect, limited API support)
-    - Removed old presets: default backjitters, sidejitters, and others
-    - Removed Auto-Updater (no longer requires internet access)
-    - Removed 3-Way Jitter
-    # Fixed bhopping with AA (target selection not supported due to API limitations)
-    # Fixed incorrect spinbot behavior
-    # Fixed spin infinite loop exceeding 180 degrees
-	# Fixed override incorrect and broken behavior
-    # Fixed bugs, crashes, errors, and loop issues
-    * Improved system toggle keys (shorter)
-    * Improved spin angles based on tick
-    * Improved angle protection (AAI)
-    * Improved code handling for toggle
-    * Improved various small issues
-    / Changed GUI, text, and variable names for clarity
-
-** Planned for Future Releases **
-    + Add GUI hidden/invisible by preset
-    + Add AA flick per 1 tick?
-    + Fix at_target enemy issue
-    + Fix CreateMove angle conflicts and auto-strafer movement
-    + Need more ideas? DM me on Discord: blurry33
-    + ... more
-
-	add anti hideshorts shot invisible.
-	theory anti aim back positon enemy exaclty and same time shot per one tick.
-
-	pitch fix per tick
---]]
