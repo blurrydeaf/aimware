@@ -57,7 +57,7 @@ end
 local function aa_base(cmd)
 
 	local antiaim = gui.GetValue("rbot.antiaim.enabled");
-	local ad_target = gui.GetValue("rbot.antiaim.yaw", 1); -- rbot.antiaim.yaw "Target Based" (1 select)
+	local ad_target = gui.GetValue("rbot.antiaim.yaw"); -- rbot.antiaim.yaw "Target Based" (1 select)
 	local tick = globals.TickCount();
 	local jitter_tick = yaw_jitter_tick:GetValue()
 	local va = cmd:GetViewAngles();
@@ -66,7 +66,8 @@ local function aa_base(cmd)
 	local mode_yaw = yaw_present:GetValue()
 
 	-- check direction
-	if ad_target == true then
+	if ad_target == 1 then
+	print("target?")
 		yaw_base = va.y + 180; --at target + flip backward?
 		--print("yaw_base: ".. yaw_base)
 	else
@@ -301,10 +302,9 @@ callbacks.Register("PreMove", function(cmd)
 	aa_base(cmd); --createmove no support Auto-stafer / premove no support at Target
 end)
 callbacks.Register("CreateMove", function(cmd)
-	aa_debug(cmd);
 
+	aa_debug(cmd);
 end)
 callbacks.Register("Unload", function()
 	--gui.Command("clear");
 end)
-
