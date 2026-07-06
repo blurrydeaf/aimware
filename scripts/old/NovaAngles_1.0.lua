@@ -9,18 +9,18 @@
 
 		--##### REFERENCE #####
 local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
-	local yaw_preset		= gui.Combobox(tab_antiaim, "yaw_preset", "Yaw Presets", "Disabled ", "Custom Yaw", "Spinbot ", "Jitter ", "Random ");
-	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spin Speed", 600, 1, 1440, 1);
-	local yaw_jitter_mode	= gui.Combobox(tab_antiaim, "yaw_jitter_mode", "Jitter Mode", "Center", "3-Way", "Random");
-	local yaw_jitter_range	= gui.Slider(tab_antiaim, "yaw_jitter_range", "Jitter Range", 30, 1, 180);
+	local yaw_present		= gui.Combobox(tab_antiaim, "yaw_present", "Yaw Presets", "Disabled ", "Custom Yaw", "Spinbot ", "Jitter ", "Random ", "Moonwalk ");
+	local yaw_offset 		= gui.Slider(tab_antiaim, "yaw_offset", "Yaw Offset", 180, -180, 180, 0.1);
+	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spin Speed", -5, -45, 45, 0.1);
+	local yaw_jitter_range	= gui.Slider(tab_antiaim, "yaw_jitter_range", "Jitter Range", 30, 0, 90);
 	local yaw_jitter_tick	= gui.Slider(tab_antiaim, "yaw_jitter_tick", "Jitter Speed", 4, 2, 32, 2);
 
-	--local pitch_preset		= gui.Combobox(tab_pitch, "pitch_preset", "preset", "Disable", "UpDown", "FlickUp", "Random", "Custom");
-	local pitch_preset		= gui.Combobox(tab_antiaim, "pitch_preset", "Pitch Presets", "Disabled", "Jitter Pitch", "Fake Pitch", "Fake Jitter", "Nod", "Custom Pitch");
-	local pitch_slider 		= gui.Slider(tab_antiaim, "pitch_slider", "Pitch Offset", -50, -89, 89, 0.01);
+	--local pitch_present		= gui.Combobox(tab_pitch, "pitch_present", "Present", "Disable", "UpDown", "FlickUp", "Random", "Custom");
+	local pitch_present		= gui.Combobox(tab_antiaim, "pitch_present", "Pitch Presets", "Disabled", "Jitter Pitch", "Fake Pitch", "Fake Jitter", "Nod", "Custom Pitch");
+	local pitch_slider 		= gui.Slider(tab_antiaim, "pitch_slider", "Pitch Offset", -50, -89, 89, 0.1);
 	
 	--local roll_enable 		= gui.Checkbox(tab_antiaim, "roll_enable", "Enable Roll Angle", false);
-	local roll_preset		= gui.Combobox(tab_antiaim, "roll_preset", "Roll Presets", "Disabled", "Wave Camera", "Spin Camera", "Upside-Down Camera", "Custom Roll");
+	local roll_present		= gui.Combobox(tab_antiaim, "roll_present", "Roll Presets", "Disabled", "Wave Camera", "Spin Camera", "Upside-Down Camera", "Custom Roll");
 	local roll_slider		= gui.Slider(tab_antiaim, "roll_slider", "Roll Offset", 0, -45, 45, 0.1);
 	--local roll_speed 		= gui.Slider(tab_antiaim, "roll_speed", "Roll Speed", 0, 0, 15, 1);
 	--local roll_range 		= gui.Slider(tab_antiaim, "roll_range", "Roll Range", 0, 0, 360, 1);
@@ -37,18 +37,15 @@ local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
 
 local angle_debug = false --only dev mode. no need public.
 --local angle_debug = angle_debug:GetValue()
---local yaw_offset = gui.GetValue("rbot.antiaim.yawoffset");
-
-
 
 -- ###################
 -- ##### ANTIAIM #####
 -- ###################
 local fake_pitch = -3402823346297399750336966557696;
-local in_attack = bit.lshift(1, 0);
-local on_use = bit.lshift(1, 5);
-local pre_va = EulerAngles(0, 0, 0);
-local va = EulerAngles(0, 0, 0);
+local in_attack = bit.lshift(1, 0)
+local on_use = bit.lshift(1, 5)
+local pre_va = EulerAngles(0, 0, 0); 
+local va = EulerAngles(0, 0, 0); 
 local override = 0;
 
 -- get pre view angles
@@ -59,32 +56,33 @@ end
 -- check anti aim logic
 local function aa_base(cmd)
 
-	local antiaim = gui.GetValue("rbot.antiaim.enabled"); 
-	local aa_yaw_base = gui.GetValue("rbot.antiaim.yaw"); -- rbot.antiaim.yaw "Target Based" (1 select)
+	local antiaim = gui.GetValue("rbot.antiaim.enabled");
+	local ad_target = gui.GetValue("rbot.antiaim.yaw"); -- rbot.antiaim.yaw "Target Based" (1 select)
 	local tick = globals.TickCount();
 	local jitter_tick = yaw_jitter_tick:GetValue()
 	local va = cmd:GetViewAngles();
 	--local yaw_base = pre_va.y; --base viewangle crosshair
 	local sp_speed = yaw_spin_speed:GetValue();
-	local mode_yaw = yaw_preset:GetValue()
+	local mode_yaw = yaw_present:GetValue()
 
 	-- check direction
-	if aa_yaw_base == 1 then
-		yaw_base = va.y; --at target + flip backward?
+	if ad_target == 1 then
+	print("target?")
+		yaw_base = va.y + 180; --at target + flip backward?
 		--print("yaw_base: ".. yaw_base)
-	elseif aa_yaw_base == 2 then --base viewangle crosshair
-		yaw_base = pre_va.y; 
+	else
+		yaw_base = pre_va.y; --base viewangle crosshair
 	end
 	
-	-- check yaw preset
+	-- check yaw present
 	--  "Disable ", "Custom Yaw ", "Spinbot ", "Jitter ", "Random ", "Moonwalk ");
-	if yaw_preset:GetValue() == 1 then   -- Custom
+	if yaw_present:GetValue() == 1 then   -- Custom
 
-		va.y = yaw_base;
+		va.y = yaw_base + yaw_offset:GetValue();
 
-	elseif yaw_preset:GetValue() == 2 then -- Spinbot 
+	elseif yaw_present:GetValue() == 2 then -- Spinbot
 
-		--va.y = yaw_base + (tick * sp_speed) % 360 ;
+		va.y = yaw_base + (tick * sp_speed) % 360 ;
 
 		-- 1st test 
 		--yaw_base = yaw_base + (tick % 360);
@@ -94,90 +92,63 @@ local function aa_base(cmd)
 		--va.y = yaw_base + (tick * sp_speed)
 		--va.y = va.y % 360
 
-		local rpm = sp_speed;
-		local step = (rpm * 360) / (60 * 64); -- RPM
-		
-		if spin_angle == nil then spin_angle = 0 end
-		spin_angle = (spin_angle + step) % 360;
-		
-		va.y = spin_angle;
+	elseif yaw_present:GetValue() == 3 then   -- Jitter
 
-	elseif yaw_preset:GetValue() == 3 then   -- Jitter
-
-		local speed = yaw_jitter_tick:GetValue()
-		local range = yaw_jitter_range:GetValue() / 2
-		
-		if yaw_jitter_mode:GetValue() == 0 then -- jitter Center
-			if tick % speed >= speed / 2 then
-				va.y = yaw_base - range
-			else
-				va.y = yaw_base + range
-			end 
-		elseif yaw_jitter_mode:GetValue() == 1 then -- jitter 3-Way
-			local phase = math.floor((tick % speed) / (speed / 4))
-			if phase == 0 then
-				va.y = yaw_base - range
-			elseif phase == 2 then
-				va.y = yaw_base + range
-			else
-				va.y = yaw_base
-			end
-		elseif yaw_jitter_mode:GetValue() == 2 then -- jitter Random
-			if tick % math.max(1, math.floor(speed / 2)) == 0 then
-				random_jitter = (math.random() * (range * 2)) - range
-			end
-			va.y = yaw_base + random_jitter
+		if tick % yaw_jitter_tick:GetValue() >= yaw_jitter_tick:GetValue()/2 then --tick 0 1
+			va.y = yaw_base + (yaw_offset:GetValue() - yaw_jitter_range:GetValue())
+		else --tick 3 4
+			va.y = yaw_base + (yaw_offset:GetValue() + yaw_jitter_range:GetValue())
 		end
 	
-	elseif yaw_preset:GetValue() == 4 then -- random
+	elseif yaw_present:GetValue() == 4 then -- random
 
 		va.y = yaw_base + math.random(-180,180); 
 
-	elseif yaw_preset:GetValue() == 5 then -- moonwalk
+	elseif yaw_present:GetValue() == 5 then -- moonwalk
 
 		va.y = yaw_base * 0;
 
 	end
 
-	-- preset pitch
-	if pitch_preset:GetValue() == 1 then -- Jitter Pitch
+	-- present pitch
+	if pitch_present:GetValue() == 1 then -- Jitter Pitch
 		if tick % 2 == 0 then
 			va.x = 89;
 		else 
 			va.x = -89;
 		end
-	elseif pitch_preset:GetValue() == 2 then -- Fake Pitch
+	elseif pitch_present:GetValue() == 2 then -- Fake Pitch
 		va.x = fake_pitch; --exploit fake pitch 
-	elseif pitch_preset:GetValue() == 3 then -- Fake Jitter
+	elseif pitch_present:GetValue() == 3 then -- Fake Jitter
 		if tick % 2 == 0 then 
 			va.x = 179;
 		else 
 			va.x = -179;
 		end
-	elseif pitch_preset:GetValue() == 4 then -- sine pitch
+	elseif pitch_present:GetValue() == 4 then -- sine pitch
 		va.x = math.sin(tick * (1 / 4)) * 89;
-	elseif pitch_preset:GetValue() == 5 then -- Custom
+	elseif pitch_present:GetValue() == 5 then -- Custom
 		va.x = pitch_slider:GetValue();
 	end
 
-	-- check roll angle + preset
-	if roll_preset:GetValue() == 1 then -- Wave camera
+	-- check roll angle + present
+	if roll_present:GetValue() == 1 then -- Wave camera
 		va.z = math.sin(tick * (1 / 100)) * 45;
-	elseif roll_preset:GetValue() == 2 then -- Spinning camera
+	elseif roll_present:GetValue() == 2 then -- Spinning camera
 		va.z = (tick * 1) % 360;
-	elseif roll_preset:GetValue() == 3 then -- Camera Upside
+	elseif roll_present:GetValue() == 3 then -- Camera Upside
 		va.z = -180;
-	elseif roll_preset:GetValue() == 4 then -- Custom roll
+	elseif roll_present:GetValue() == 4 then -- Custom roll
 		va.z = roll_slider:GetValue();
 	end
 
 	-- check override
 	if override == 1 then -- right
-		va.y = va.y - 90;
+		va.y = yaw_base - 90;
 	elseif override == 2 then -- left
-		va.y = va.y + 90;
+		va.y = yaw_base + 90;
 	elseif override == 3 then -- forward
-		va.y = va.y + 180; 
+		va.y = yaw_base; 
 	end
 
 	--check conditions
@@ -281,27 +252,6 @@ local screen_x, screen_y = draw.GetScreenSize()
 local function checker_func()
 	local offset_text_y = 15; -- reset positon Y
 
-	-- visibility toggles based on preset
-	yaw_spin_speed:SetInvisible(yaw_preset:GetValue() ~= 2)
-	
-	local is_jitter = yaw_preset:GetValue() == 3
-	yaw_jitter_mode:SetInvisible(not is_jitter)
-	yaw_jitter_range:SetInvisible(not is_jitter)
-	yaw_jitter_tick:SetInvisible(not is_jitter)
-	
-	-- snap jitter speed to multiples of 4 if in 3-way mode
-	if is_jitter and yaw_jitter_mode:GetValue() == 1 then
-		local speed = yaw_jitter_tick:GetValue()
-		if speed % 4 ~= 0 then
-			local new_speed = math.floor(speed / 4 + 0.5) * 4
-			if new_speed < 4 then new_speed = 4 end
-			yaw_jitter_tick:SetValue(new_speed)
-		end
-	end
-	
-	pitch_slider:SetInvisible(pitch_preset:GetValue() ~= 5)
-	roll_slider:SetInvisible(roll_preset:GetValue() ~= 4)
-
 	-- toggle keys
 	handle_toggle(override_right, 1);
 	handle_toggle(override_left, 2);
@@ -318,15 +268,15 @@ local function checker_func()
 		draw.Color(custom_color) -- color
 		
 		-- text
-		draw.TextShadow(center_x - offset_text,  center_y + offset_text_y, "YAW: " .. (current_yaw or "0.00"))
+		draw.TextShadow(center_x - offset_text,  center_y + offset_text_y, "YAW: " .. current_yaw)
 		offset_text_y = offset_text_y + offset_y
-		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "PITCH: " .. (current_pitch or "0.00"))
+		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "PITCH: " .. current_pitch)
 		offset_text_y = offset_text_y + offset_y
-		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "ROLL: " .. (current_roll or "0.00"))	
+		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "ROLL: " .. current_roll)	
 		offset_text_y = offset_text_y + offset_y
-		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "FWD: " .. (current_fwd or 0) .. " | SIDE: " .. (current_side or 0))	
+		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "FWD: " .. current_fwd .. " | SIDE: " .. current_side)	
 		offset_text_y = offset_text_y + offset_y
-		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "MOVE: " .. (current_movetype or 0) .. " | ACTUAL: " .. (current_actual or 0))	
+		draw.TextShadow(center_x - offset_text, center_y + offset_text_y, "MOVE: " .. current_movetype .. " | ACTUAL: " .. current_actual)	
 		offset_text_y = offset_text_y + offset_y
 
 		--  override
@@ -356,5 +306,5 @@ callbacks.Register("CreateMove", function(cmd)
 	aa_debug(cmd);
 end)
 callbacks.Register("Unload", function()
-	gui.Command("clear");
+	--gui.Command("clear");
 end)
