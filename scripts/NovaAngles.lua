@@ -10,7 +10,7 @@
 		--##### REFERENCE #####
 local tab_antiaim		= gui.Reference("Ragebot", "Anti-Aim");
 	local yaw_preset		= gui.Combobox(tab_antiaim, "yaw_preset", "Yaw Presets", "Disabled ", "Custom Yaw", "Spinbot ", "Jitter ", "Random ");
-	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spin Speed", 600, 1, 1440, 1);
+	local yaw_spin_speed 	= gui.Slider(tab_antiaim, "yaw_spin_speed", "Spin Speed", 600, 1, 1920, 1);
 	local yaw_jitter_mode	= gui.Combobox(tab_antiaim, "yaw_jitter_mode", "Jitter Mode", "Center", "3-Way", "Random");
 	local yaw_jitter_range	= gui.Slider(tab_antiaim, "yaw_jitter_range", "Jitter Range", 30, 1, 180);
 	local yaw_jitter_tick	= gui.Slider(tab_antiaim, "yaw_jitter_tick", "Jitter Speed", 4, 2, 32, 2);
