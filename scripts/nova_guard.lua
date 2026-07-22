@@ -8,7 +8,7 @@
 
 -- ref main
 local tab_features = gui.Reference("Miscellaneous", "Features");
-local window_enable = gui.Checkbox(tab_features, "window_enable", "Window Anti-VacLive", true);
+local window_enable = gui.Checkbox(tab_features, "window_enable", "Window NovaGuard", true);
 	window_enable:SetDescription("Pick features, limits and restrictions to stay safe.");
 
 -- vars
